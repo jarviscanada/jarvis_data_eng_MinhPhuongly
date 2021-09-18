@@ -9,13 +9,13 @@ CREATE TABLE IF NOT EXISTS host_info(
 	cpu_mhz		DECIMAL(9,3) NOT NULL,
 	l2_cache	DECIMAL(6,2) NOT NULL,
 	total_mem	DECIMAL(9,2) NOT NULL,
-	timestamp	DATE NOT NULL,
+	timestamp	TIMESTAMP NOT NULL,
 	CONSTRAINT PK_host_info PRIMARY KEY(id),
 	CONSTRAINT UC_host_info_hostname UNIQUE(hostname)
 );
 
 CREATE TABLE IF NOT EXISTS host_usage(
-	timestamp	DATE NOT NULL,
+	timestamp	TIMESTAMP NOT NULL,
 	host_id		INTEGER NOT NULL,
 	memory_free	DECIMAL(12,2) NOT NULL,
 	cpu_idle	DECIMAL(5,2) NOT NULL,
