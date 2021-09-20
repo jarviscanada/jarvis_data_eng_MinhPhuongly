@@ -6,3 +6,16 @@
 5. [Spark/Scala](./spark) In-progress
 6. [Cloud/DevOps](./cloud_devops) In-progress
 
+# Introduction
+# Quick Start
+# Implementation
+## Architecture
+![Architecture Diagram](./assets/linux_sql_diagram.png)
+## Scripts
+## Database Modeling
+# Test
+# Development
+# Improvements
+
+
+
