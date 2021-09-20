@@ -58,5 +58,4 @@ case $to_do in
 	;;
 esac
 
-exit 0
 
