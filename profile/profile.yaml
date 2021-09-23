@@ -1,0 +1,130 @@
+# Preferred name (Characters only)
+name: "Minh Phuong Ly"
+# Your GitHub repo root URL
+github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_MinhPhuongly.git
+
+# Introduce yourself, your academic and professional background.
+# What excites you about the software industry and your passion. At least 80 words
+summary: Being impassioned in exploring and experiencing new technologies, I have knowledge and experience in operating systems, computer networking and software programming. Continuously challenging things, improving and collecting technology knowledge is my favorite so far.
+
+# Group your skills by level.
+# Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
+skills:
+  # At least 5 skills
+  proficient:
+    - Python
+    - Linux/Bash
+    - RDBMS/SQL
+    - Agile/Scrum
+    - Git/Github
+  # At least 5 skills
+  competent:
+    - Java
+    - Flask
+    - JavaScript
+    - HTML/CSS
+    - DynamoDB/NoSQL
+  # At least 5 skills
+  familiar:
+    - S3
+    - EC2
+    - Bootstrap
+    - React.Js
+    - Docker/VMWare
+    - Node.Js
+    - Socket.io
+    - C++
+
+# List of Jarvis projects
+jarvis_projects:
+  - name: "Cluster Monitor"
+    git_url: "https://github.com/jarviscanada/jarvis_data_eng_MinhPhuongly/tree/master/linux_sql"
+    # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: "Implemented a cluster monitoring system which helps to automatically collect hardware specifications
+    from Centos servers every minutes using Crontab and Bash scripts. The data then will be stored in PostgresSQL
+    database provisioned using Docker for later querying to answering some business questions such as the amount of
+    memory used of each server within 5 minutes interval and detect server failures. The PostgresSQL container is
+    also can be start/stop/create by a bash script. We used Git as a version control system to manage the code and followed GitFlow branching strategy."
+  - name: "Core Java Apps"
+    git_url: "/core_java"
+    description:
+      - "Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+      - "JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+      - "Grep App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+  - name: "Springboot App"
+    git_url: "/springboot"
+    description: ""
+  - name: "Python Data Analytics"
+    git_url: "/python_data_anlytics"
+    description: ""
+  - name: "Hadoop"
+    git_url: "/hadoop"
+    description: ""
+  - name: "Spark"
+    git_url: "/spark"
+    description: ""
+  - name: "Cloud/DevOps"
+    git_url: "/cloud_devops"
+    description: ""
+
+# List of personal or academic projects
+# Feel free to add more projects
+highlighted_projects:
+    #project name
+  - name: "Fetching RESTAPIs App"
+    git_url: "https://github.com/minhphuong1994/fetch_API_flask.git"
+    description: "Built APIs to manipulate another API and return processed JSON data. To improve the performance, Thread was used to make asynchronous requests. Additionally, server-side cache was implemented with Requests-cache to diminish the cost of API requests."
+  - name: "Travel Booking Android App"
+    git_url: "https://github.com/minhphuong1994/TravelAgent_AndroidApp"
+    description: "Showed tourist points on ListView. Users' selected tour was saved to SharedPreferences and used Intent to change screen. SQLite was used for data persistence. Booked tours details were then calculated and displayed on another screen."
+
+#List of professional experience
+#The job description allows hiring managers to understand your job and the technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+#The description must be more than 25 words. If your experience is not software related, please focus on soft skills and achievements (e.g. team collaboration, problem-solving, improvements, communication).
+professional_experience:
+  #Write your Jarvis role as a professional experience rather than training.
+  - title: "Data Engineer"
+    company: "Jarvis"
+    duration: "2021-present"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: "Worked in a Data Engineer team that followed the Agile/Scrum model to implement multiple projects in Linux/Bash, Java, Docker and SQL. Conducted daily scrum meetings and bi weekly sprint meetings with the team to keep on track with everyone's work."
+  - title: "Full-stack Web Developer (part-time)"
+    company: "ASA Energy Consulting Ltd."
+    duration: "2020-present"
+    description: "Implemented from scratch a web application using Flask framework for users to generate reports from multiple collected data sources based on user's requirements. The front-end was implemented with the help of HTML5, JavaScript ES6, Bootstrap and Jinja and JQuery. The app used DynamoDB as a database and S3 as a file server. There was a C++ application which was built to collaborate with the web server to perform complicated and heavy calculations for generating reports. The reports were also projected into charts on the web interface using ChartJs. The web app was hosted on EC2 with HTTPS using NginX,WSGI and DNS service."
+
+#List of edcuation
+education: 
+  - school_name: "Lambton College"
+    duration: "2019-2021"
+    degree: "Post Graduate Certificate"
+    department: "Computer Software and Database Development"
+    # optional
+    awards_achievements: 
+      - "Cestar Award 2020: Highest GPA in the program for the first 2 semesters"
+      - "Dean's AWARD"
+      - "GPA: 3.84/4.0"
+  - school_name: "Eastern International University"
+    duration: "2012-2017"
+    degree: "Bachelor of Engineering"
+    department: "Communication and Computer Network"
+    awards_achievements:
+      - "Student Dean's List (2013, 2014)"
+      - "GPA: 3.53/4"
+
+#Optional section
+others:
+    #category
+  - title: "Certificates"
+    #list of items
+    bullets:
+      - "Udacity Machine Learning (2019)"
+  - title: "Awards"
+    bullets:
+      - "Winner"
+  - title: "Activities/Hobbies"
+    bullets:
+      - "Basketball player"
+      - "Competitive gaming"
+      - "Volunteer, ABC Food bank: Ut enim ad minim veniam"
