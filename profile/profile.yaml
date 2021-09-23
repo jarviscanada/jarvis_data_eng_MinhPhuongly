@@ -93,7 +93,7 @@ professional_experience:
   - title: "Full-stack Web Developer (part-time)"
     company: "ASA Energy Consulting Ltd."
     duration: "2020-present"
-    description: "Implemented from scratch a web application using Flask framework for users to generate reports from multiple collected data sources based on user's requirements. The front-end was implemented with the help of HTML5, JavaScript ES6, Bootstrap and Jinja and JQuery. The app used DynamoDB as a database and S3 as a file server. There was a C++ application which was built to collaborate with the web server to perform complicated and heavy calculations for generating reports. The reports were also projected into charts on the web interface using ChartJs. The web app was hosted on EC2 with HTTPS using NginX,WSGI and DNS service."
+    description: "Implemented from scratch a web application using Flask framework for users to generate reports from multiple collected data sources based on user's requirements. The front-end was implemented with the help of HTML5, JavaScript ES6, Bootstrap, Jinja and JQuery. The app used DynamoDB as a database and S3 as a file server. There was a C++ application which was built to collaborate with the web server to perform complicated and heavy calculations for generating reports. The reports were also projected into charts on the web interface using ChartJs. The web app was hosted on EC2 with HTTPS using NginX,WSGI and DNS service."
 
 #List of edcuation
 education: 
@@ -117,15 +117,8 @@ education:
 #Optional section
 others:
     #category
-  - title: "Certificates"
-    #list of items
-    bullets:
-      - "Udacity Machine Learning (2019)"
-  - title: "Awards"
-    bullets:
-      - "Winner"
   - title: "Activities/Hobbies"
     bullets:
-      - "Basketball player"
+      - "Reading novels"
       - "Competitive gaming"
-      - "Volunteer, ABC Food bank: Ut enim ad minim veniam"
+      - "Swimming and jogging"
