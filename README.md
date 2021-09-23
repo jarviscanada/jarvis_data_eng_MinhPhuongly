@@ -4,9 +4,9 @@ Being impassioned in exploring and experiencing new technologies, I have knowled
 
 ## Skills
 
-**Proficient:** Python, Linux/Bash, RDBMS/SQL, Agile/Scrum, Git/Github
+**Proficient:** Python, Java, Linux/Bash, RDBMS/SQL, Agile/Scrum, Git/Github
 
-**Competent:** Java, Flask, JavaScript, HTML/CSS, DynamoDB/NoSQL
+**Competent:** GitFlow, Flask, JavaScript ES6/JQuery, HTML/CSS, DynamoDB/NoSQL
 
 **Familiar:** S3, EC2, Bootstrap, React.Js, Docker/VMWare, Node.Js, Socket.io, C++
 

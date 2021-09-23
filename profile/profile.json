@@ -115,9 +115,9 @@
   ],
   "skills": {
     "competent": [
-      "Java",
+      "GitFlow",
       "Flask",
-      "JavaScript",
+      "JavaScript ES6/JQuery",
       "HTML/CSS",
       "DynamoDB/NoSQL"
     ],
@@ -133,6 +133,7 @@
     ],
     "proficient": [
       "Python",
+      "Java",
       "Linux/Bash",
       "RDBMS/SQL",
       "Agile/Scrum",

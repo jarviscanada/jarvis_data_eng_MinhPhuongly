@@ -13,15 +13,16 @@ skills:
   # At least 5 skills
   proficient:
     - Python
+    - Java
     - Linux/Bash
     - RDBMS/SQL
     - Agile/Scrum
     - Git/Github
   # At least 5 skills
   competent:
-    - Java
+    - GitFlow
     - Flask
-    - JavaScript
+    - JavaScript ES6/JQuery
     - HTML/CSS
     - DynamoDB/NoSQL
   # At least 5 skills
