@@ -1,0 +1,98 @@
+{
+  "education": [
+    {
+      "awards_achievements": [
+        "Cestar Award 2020: Highest GPA in the program for the first 2 semesters",
+        "Dean's AWARD",
+        "GPA: 3.84/4.0"
+      ],
+      "degree": "Post Graduate Certificate",
+      "department": "Computer Software and Database Development",
+      "duration": "2019-2021",
+      "school_name": "Lambton College"
+    },
+    {
+      "awards_achievements": [
+        "Student Dean's List (2013, 2014)",
+        "GPA: 3.53/4"
+      ],
+      "degree": "Bachelor of Engineering",
+      "department": "Communication and Computer Network",
+      "duration": "2012-2017",
+      "school_name": "Eastern International University"
+    }
+  ],
+  "github_repo_root_url": "https://github.com/jarviscanada/jarvis_data_eng_MinhPhuongly.git",
+  "highlighted_projects": [
+    {
+      "description": "Built APIs to manipulate another API and return processed JSON data. To improve the performance, Thread was used to make asynchronous requests. Additionally, server-side cache was implemented with Requests-cache to diminish the cost of API requests.",
+      "git_url": "https://github.com/minhphuong1994/fetch_API_flask.git",
+      "name": "Fetching RESTAPIs App"
+    },
+    {
+      "description": "Showed tourist points on ListView. Users' selected tour was saved to SharedPreferences and used Intent to change screen. SQLite was used for data persistence. Booked tours details were then calculated and displayed on another screen.",
+      "git_url": "https://github.com/minhphuong1994/TravelAgent_AndroidApp",
+      "name": "Travel Booking Android App"
+    }
+  ],
+  "jarvis_projects": [
+    {
+      "description": "Implemented a cluster monitoring system which helps to automatically collect hardware specifications from Centos servers every minute using Crontab and Bash scripts. The data then will be stored in PostgresSQL database provisioned using Docker for later querying to answering some business questions such as the amount of memory used of each server within 5 minutes interval and detect server failures. The PostgresSQL container also can be controlled by a bash script. We used Git as a version control system to manage the code and followed GitFlow branching strategy.",
+      "git_url": "https://github.com/jarviscanada/jarvis_data_eng_MinhPhuongly/tree/master/linux_sql",
+      "name": "Cluster Monitor"
+    }
+  ],
+  "name": "Minh Phuong Ly",
+  "others": [
+    {
+      "bullets": [
+        "Reading novels",
+        "Competitive gaming",
+        "Swimming and jogging"
+      ],
+      "title": "Activities/Hobbies"
+    }
+  ],
+  "professional_experience": [
+    {
+      "company": "Jarvis",
+      "description": "Worked in a Data Engineer team that followed the Agile/Scrum model to implement multiple projects in Linux/Bash, Java, Docker and SQL. Conducted daily scrum meetings and bi-weekly sprint meetings with the team to keep on track with everyone's work.",
+      "duration": "2021-present",
+      "title": "Data Engineer"
+    },
+    {
+      "company": "ASA Energy Consulting Ltd.",
+      "description": "Implemented from scratch a web application using Flask framework for users to generate reports from multiple collected data sources based on user's requirements. The front-end was implemented with the help of HTML5, JavaScript ES6, Bootstrap, Jinja and JQuery. The app used DynamoDB as a database and S3 as a file server. There was a C++ application that was built to collaborate with the web server to perform complicated and heavy calculations for generating reports. The reports were also projected into charts on the web interface using ChartJs. The web app was hosted on EC2 with HTTPS using NginX, WSGI and DNS service.",
+      "duration": "2020-present",
+      "title": "Full-stack Web Developer (part-time)"
+    }
+  ],
+  "skills": {
+    "competent": [
+      "GitFlow",
+      "Flask",
+      "JavaScript ES6/JQuery",
+      "HTML/CSS",
+      "DynamoDB/NoSQL"
+    ],
+    "familiar": [
+      "S3",
+      "EC2",
+      "Bootstrap",
+      "React.Js",
+      "Docker/VMWare",
+      "Node.Js",
+      "Socket.io",
+      "C++"
+    ],
+    "proficient": [
+      "Java",
+      "Python",
+      "Linux/Bash",
+      "RDBMS/SQL",
+      "Agile/Scrum",
+      "Git/Github"
+    ]
+  },
+  "summary": "Being impassioned in exploring and experiencing new technologies, I got my bachelor degree in Communication and Computer Network and experienced roughly 1 year as an IT Operation Specialist at ILA English Language Center in Vietnam. Because of the job's characteristics, I got bored of daily repeated tasks and have decided to pursue a software development career. After completed a 2 years post-graduate program called Computer Software and Database Development in Canada with some Co-op and part-time experience as a full-stack web developer. I now have knowledge and experience in operating systems, computer networking and software programming. Continuously challenging things, improving and collecting technology knowledge is my favorite so far."
+}
