@@ -1,10 +1,10 @@
 # Minh Phuong Ly . Jarvis Consulting
 
-Being impassioned in exploring and experiencing new technologies, I have knowledge and experience in operating systems, computer networking and software programming. Continuously challenging things, improving and collecting technology knowledge is my favorite so far.
+Being impassioned in exploring and experiencing new technologies, I got my bachelor degree in Communication and Computer Network and experienced roughly 1 year as an IT Operation Specialist at ILA English Language Center in Vietnam. Because of the job's characteristics, I got bored of daily repeated tasks and have decided to pursue a software development career. After completed a 2 years post-graduate program called Computer Software and Database Development in Canada with some Co-op and part-time experience as a full-stack web developer. I now have knowledge and experience in operating systems, computer networking and software programming. Continuously challenging things, improving and collecting technology knowledge is my favorite so far.
 
 ## Skills
 
-**Proficient:** Python, Java, Linux/Bash, RDBMS/SQL, Agile/Scrum, Git/Github
+**Proficient:** Java, Python, Linux/Bash, RDBMS/SQL, Agile/Scrum, Git/Github
 
 **Competent:** GitFlow, Flask, JavaScript ES6/JQuery, HTML/CSS, DynamoDB/NoSQL
 
@@ -15,23 +15,7 @@ Being impassioned in exploring and experiencing new technologies, I have knowled
 Project source code: [https://github.com/jarviscanada/jarvis_data_eng_MinhPhuongly.git](https://github.com/jarviscanada/jarvis_data_eng_MinhPhuongly.git)
 
 
-**Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_MinhPhuongly.git/tree/masterhttps://github.com/jarviscanada/jarvis_data_eng_MinhPhuongly/tree/master/linux_sql)]: Implemented a cluster monitoring system which helps to automatically collect hardware specifications from Centos servers every minutes using Crontab and Bash scripts. The data then will be stored in PostgresSQL database provisioned using Docker for later querying to answering some business questions such as the amount of memory used of each server within 5 minutes interval and detect server failures. The PostgresSQL container is also can be start/stop/create by a bash script. We used Git as a version control system to manage the code and followed GitFlow branching strategy.
-
-**Core Java Apps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_MinhPhuongly.git/tree/master/core_java)]:
-      
-  - Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
-  - JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
-  - Grep App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
-
-**Springboot App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_MinhPhuongly.git/tree/master/springboot)]: Not Started
-
-**Python Data Analytics** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_MinhPhuongly.git/tree/master/python_data_anlytics)]: Not Started
-
-**Hadoop** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_MinhPhuongly.git/tree/master/hadoop)]: Not Started
-
-**Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_MinhPhuongly.git/tree/master/spark)]: Not Started
-
-**Cloud/DevOps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_MinhPhuongly.git/tree/master/cloud_devops)]: Not Started
+**Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_MinhPhuongly.git/tree/masterhttps://github.com/jarviscanada/jarvis_data_eng_MinhPhuongly/tree/master/linux_sql)]: Implemented a cluster monitoring system which helps to automatically collect hardware specifications from Centos servers every minute using Crontab and Bash scripts. The data then will be stored in PostgresSQL database provisioned using Docker for later querying to answering some business questions such as the amount of memory used of each server within 5 minutes interval and detect server failures. The PostgresSQL container also can be controlled by a bash script. We used Git as a version control system to manage the code and followed GitFlow branching strategy.
 
 
 ## Highlighted Projects
@@ -42,9 +26,9 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_MinhPhuong
 
 ## Professional Experiences
 
-**Data Engineer, Jarvis (2021-present)**: Worked in a Data Engineer team that followed the Agile/Scrum model to implement multiple projects in Linux/Bash, Java, Docker and SQL. Conducted daily scrum meetings and bi weekly sprint meetings with the team to keep on track with everyone's work.
+**Data Engineer, Jarvis (2021-present)**: Worked in a Data Engineer team that followed the Agile/Scrum model to implement multiple projects in Linux/Bash, Java, Docker and SQL. Conducted daily scrum meetings and bi-weekly sprint meetings with the team to keep on track with everyone's work.
 
-**Full-stack Web Developer (part-time), ASA Energy Consulting Ltd. (2020-present)**: Implemented from scratch a web application using Flask framework for users to generate reports from multiple collected data sources based on user's requirements. The front-end was implemented with the help of HTML5, JavaScript ES6, Bootstrap, Jinja and JQuery. The app used DynamoDB as a database and S3 as a file server. There was a C++ application which was built to collaborate with the web server to perform complicated and heavy calculations for generating reports. The reports were also projected into charts on the web interface using ChartJs. The web app was hosted on EC2 with HTTPS using NginX,WSGI and DNS service.
+**Full-stack Web Developer (part-time), ASA Energy Consulting Ltd. (2020-present)**: Implemented from scratch a web application using Flask framework for users to generate reports from multiple collected data sources based on user's requirements. The front-end was implemented with the help of HTML5, JavaScript ES6, Bootstrap, Jinja and JQuery. The app used DynamoDB as a database and S3 as a file server. There was a C++ application that was built to collaborate with the web server to perform complicated and heavy calculations for generating reports. The reports were also projected into charts on the web interface using ChartJs. The web app was hosted on EC2 with HTTPS using NginX, WSGI and DNS service.
 
 
 ## Education
