@@ -1,7 +1,7 @@
 package ca.jrvs.apps.grep;
 
-import com.sun.org.slf4j.internal.Logger;
-import com.sun.org.slf4j.internal.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -50,6 +50,7 @@ public class JavaGrepImp implements JavaGrep{
             }
         }
         writeToFile(matchedLines);
+//        logger.info("Process has been completed");
     }
 
     @Override
@@ -82,11 +83,9 @@ public class JavaGrepImp implements JavaGrep{
             reader.close();
         }
         catch (FileNotFoundException e){
-            logger.error("File not found!",e);
             throw new RuntimeException("Error: File not found!",e);
         }
         catch (Exception e){
-            logger.error("Error happened",e);
             throw new RuntimeException("Error happened!!",e);
         }
         return result;
@@ -105,7 +104,6 @@ public class JavaGrepImp implements JavaGrep{
             }
         }
         catch ( FileNotFoundException e){
-            logger.error("File not found!",e);
             throw  new FileNotFoundException("File not found!");
         }
     }
