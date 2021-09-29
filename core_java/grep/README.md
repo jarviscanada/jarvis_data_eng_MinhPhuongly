@@ -1,6 +1,6 @@
 # Introduction
-The app called Grep App because it implements the use of grep command in Linux
-which will scans recursively files in a directory and then return a sequence of 
+The app is called Grep App because it implements the use of grep command in Linux
+which will scan recursively files in a directory and then return a sequence of 
 strings that match the input pattern. The technologies used including IntelliJ, 
 Java Core, Maven, Lambda and Stream APIs and Docker.  
 The app can handle over-sized files thanks to the help of Stream API. 
