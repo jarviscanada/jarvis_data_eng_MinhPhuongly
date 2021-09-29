@@ -17,6 +17,9 @@ public class LambdaStreamImp implements LambdaStreamExc{
         LambdaStreamImp test_lambdaStream = new LambdaStreamImp();
 
         System.out.println(Arrays.toString(test_lambdaStream.getOdd(abc).boxed().toArray()));
+
+        Consumer<String> aaa = test_lambdaStream.getLambdaPrinter("Start>>","<<End");
+        aaa.accept("abc");
     }
     @Override
     public Stream<String> createStrStream(String... strings) {
@@ -66,17 +69,21 @@ public class LambdaStreamImp implements LambdaStreamExc{
 
     @Override
     public Consumer<String> getLambdaPrinter(String prefix, String suffix) {
-        return null;
+        return phrase -> System.out.println(prefix+phrase+suffix);
     }
 
     @Override
     public void printMessages(String[] messages, Consumer<String> printer) {
-
+        Arrays.stream(messages).forEach(message -> printer.accept(message));
     }
 
     @Override
     public void printOdd(IntStream intStream, Consumer<String> printer) {
-
+        intStream.forEach(number -> {
+            if (number%2!=0){
+                printer.accept(Integer.toString(number));
+            }
+        });
     }
 
     @Override
