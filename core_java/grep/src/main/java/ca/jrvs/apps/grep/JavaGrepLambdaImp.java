@@ -40,21 +40,4 @@ public class JavaGrepLambdaImp extends JavaGrepImp{
         }
         return result;
     }
-
-    @Override
-    public List<String> readFLines(File inputFile) {
-        List<String> result = new ArrayList<>();
-        try{
-            Files.lines(inputFile.toPath())
-                    .forEach(line -> result.add(line));
-        }
-        catch (FileNotFoundException e){
-            throw new RuntimeException("Error: File not found!",e);
-        }
-        catch (Exception e){
-            throw new RuntimeException("Error happened!!",e);
-        }
-        return result;
-    }
-
 }
