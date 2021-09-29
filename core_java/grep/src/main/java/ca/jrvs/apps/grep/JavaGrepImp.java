@@ -3,14 +3,15 @@ package ca.jrvs.apps.grep;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 
 public class JavaGrepImp implements JavaGrep{
@@ -42,12 +43,12 @@ public class JavaGrepImp implements JavaGrep{
         List<String> matchedLines = new ArrayList<>();
         List<File> files = listFiles(getRootPath());
         for(File file: files){
-            List<String> fileContent = readFLines(file);
-            for (String line: fileContent){
+            Stream<String> fileContent = readFLines(file);
+            fileContent.forEach(line->{
                 if (containsPattern(line)){
                     matchedLines.add(line);
                 }
-            }
+            });
         }
         writeToFile(matchedLines);
 //        logger.info("Process has been completed");
@@ -72,15 +73,10 @@ public class JavaGrepImp implements JavaGrep{
     }
 
     @Override
-    public List<String> readFLines(File inputFile) {
-        List<String> result = new ArrayList<>();
+    public Stream<String> readFLines(File inputFile) {
         try{
-            File myFile = new File(inputFile.getAbsolutePath());
-            Scanner reader = new Scanner(myFile);
-            while(reader.hasNextLine()){
-                result.add(reader.nextLine());
-            }
-            reader.close();
+            Stream<String> result = Files.lines(Paths.get(inputFile.getAbsolutePath()));
+            return result;
         }
         catch (FileNotFoundException e){
             throw new RuntimeException("Error: File not found!",e);
@@ -88,7 +84,6 @@ public class JavaGrepImp implements JavaGrep{
         catch (Exception e){
             throw new RuntimeException("Error happened!!",e);
         }
-        return result;
     }
 
     @Override
