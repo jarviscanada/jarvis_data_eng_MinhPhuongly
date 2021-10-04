@@ -9,17 +9,9 @@ JDBC, PSQL, Docker and DBeaver.
 ![ERD of the database](assets/JDBC_ERD.png)
 
 ## Design Patterns
-The patterns include below classes:
-* A DatabaseConnectionManager class for generating a connection to the database using jdbc and postgresql driver.
-* A DataTransferObject (DTO) interface which require to implement a getId().
-* A DataAccessObject (DAO) abstract class which extends a generic 
-type of the DTO.  
-* A Customer class which implements the DTO interface and some extra properties.
-* A CustomerDAO class which extends the DAO class to
-create CRUD functions for working with Customer table in the database using
-an instance of the Customer class. 
+* Data Access OBject (DAO) Pattern:
 
-Note: The OrderDAO class share the same pattern with the CustomerDAO class.
+* Repository Pattern:
 
 # Test
 The database was implemented using sql files through psql CLIs and 
