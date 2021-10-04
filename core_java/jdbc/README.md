@@ -10,7 +10,7 @@ JDBC, PSQL, Docker and DBeaver.
 ## Design Patterns
 The patterns include below classes:
 * A DatabaseConnectionManager class for generating a connection to the database using jdbc and postgresql driver.
-* A DateTransferObject (DTO) interface which require to implement a getId().
+* A DataTransferObject (DTO) interface which require to implement a getId().
 * A DataAccessObject (DAO) abstract class which extends a generic 
 type of the DTO.  
 * A Customer class which implements the DTO interface and some extra properties.
