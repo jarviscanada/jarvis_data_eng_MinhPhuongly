@@ -1,6 +1,7 @@
 # Introduction
 This app uses JDBC for creating CRUD functions working with a dockerized 
-Postgres Database. The tech-stack used in this project includes Java Core, Maven,
+Postgres Database. There is a CustomerDAO class for working with Customer table and another DAO class for collecting
+data from multiple tables in the database called OrderDAO. The tech-stack used in this project includes Java Core, Maven,
 JDBC, PSQL, Docker and DBeaver.
 
 # Implementaiton
@@ -18,8 +19,7 @@ type of the DTO.
 create CRUD functions for working with Customer table in the database using
 an instance of the Customer class. 
 
-Note: There is another OrderDAO which has the same design pattern 
-with the CustomerDAO. It was implemented to retrieve data from multiple tables.
+Note: The OrderDAO class share the same pattern with the CustomerDAO class.
 
 # Test
 The database was implemented using sql files through psql CLIs and 
