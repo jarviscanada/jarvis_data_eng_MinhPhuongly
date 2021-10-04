@@ -46,7 +46,7 @@ skills:
 # List of Jarvis projects
 jarvis_projects:
   - name: "Cluster Monitor"
-    git_url: "https://github.com/jarviscanada/jarvis_data_eng_MinhPhuongly/tree/master/linux_sql"
+    git_url: "/linux_sql"
     # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
     # The project description must start with an action verb (https://bit.ly/3guO98u)
     description: "Implemented a cluster monitoring system which helps to automatically collect hardware specifications
@@ -54,7 +54,12 @@ jarvis_projects:
     database provisioned using Docker for later querying to answering some business questions such as the amount of
     memory used of each server within 5 minutes interval and detect server failures. The PostgresSQL container
     also can be controlled by a bash script. We used Git as a version control system to manage the code and followed GitFlow branching strategy."
-
+  - name: "Core Java Apps"
+    git_url: "/core_java"
+    description:
+      - "Grep App: a Java application that implements the use of grep command in Linux. It scans recursively files in a directory and then return a sequence of strings that match the input pattern. The app can handle over-sized files thanks to the help of Stream API. It was tested manually and then packaged into an uber jar file using Maven. The file was then used to create docker image and published to Docker Hub."
+      - "JDBC App: a Java app that applied DAO pattern in using JDBC to create CRUD functions working with a dockerized Postgres Database. The project used Maven to manage the dependencies and IntelliJ for developing and testing."
+      - "Twitter App: In Progress"
 
 # List of personal or academic projects
 # Feel free to add more projects

@@ -15,7 +15,13 @@ Being impassioned in exploring and experiencing new technologies, I got my bache
 Project source code: [https://github.com/jarviscanada/jarvis_data_eng_MinhPhuongly.git](https://github.com/jarviscanada/jarvis_data_eng_MinhPhuongly.git)
 
 
-**Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_MinhPhuongly.git/tree/masterhttps://github.com/jarviscanada/jarvis_data_eng_MinhPhuongly/tree/master/linux_sql)]: Implemented a cluster monitoring system which helps to automatically collect hardware specifications from Centos servers every minute using Crontab and Bash scripts. The data then will be stored in PostgresSQL database provisioned using Docker for later querying to answering some business questions such as the amount of memory used of each server within 5 minutes interval and detect server failures. The PostgresSQL container also can be controlled by a bash script. We used Git as a version control system to manage the code and followed GitFlow branching strategy.
+**Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_MinhPhuongly.git/tree/master/linux_sql)]: Implemented a cluster monitoring system which helps to automatically collect hardware specifications from Centos servers every minute using Crontab and Bash scripts. The data then will be stored in PostgresSQL database provisioned using Docker for later querying to answering some business questions such as the amount of memory used of each server within 5 minutes interval and detect server failures. The PostgresSQL container also can be controlled by a bash script. We used Git as a version control system to manage the code and followed GitFlow branching strategy.
+
+**Core Java Apps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_MinhPhuongly.git/tree/master/core_java)]:
+      
+  - Grep App: a Java application that implements the use of grep command in Linux. It scans recursively files in a directory and then return a sequence of strings that match the input pattern. The app can handle over-sized files thanks to the help of Stream API. It was tested manually and then packaged into an uber jar file using Maven. The file was then used to create docker image and published to Docker Hub.
+  - JDBC App: a Java app that applied DAO pattern in using JDBC to create CRUD functions working with a dockerized Postgres Database. The project used Maven to manage the dependencies and IntelliJ for developing and testing.
+  - Twitter App: In Progress
 
 
 ## Highlighted Projects
