@@ -7,3 +7,4 @@
 *.iml
 .eclipse
 target/
+core_java/grep/data/
