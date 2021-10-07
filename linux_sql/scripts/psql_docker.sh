@@ -6,13 +6,13 @@
 to_do=$1
 db_username=$2
 db_password=$3
-
+container_name=jrvs-psql
 
 #start docker
 sudo systemctl status docker || systemctl start docker
 
 #check container status
-docker container inspect jrvs-psql
+docker container inspect $container_name
 container_status=$?
 
 #User switch case to handle operation options
@@ -34,7 +34,7 @@ case $to_do in
 	
 	#Create container
 	docker volume create pgdata
-	docker run --name jrvs-psql -e POSTGRES_PASSWORD=$db_password -d -v pgdata:/var/lib/postgresql/data -p 5432:5432 postgres
+	docker run --name $container_name -e POSTGRES_PASSWORD=$db_password -d -v pgdata:/var/lib/postgresql/data -p 5432:5432 postgres
 	exit $?
 	;;
 	
@@ -47,7 +47,7 @@ case $to_do in
 	fi
 
 	#Start or stop the containe
-	docker container $to_do jrvs-psql
+	docker container $to_do $container_name
 	exit $?
 	;;
 

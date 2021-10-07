@@ -1,1 +1,10 @@
 .idea
+*.class
+*.jar
+*.war
+*.ear
+*.logs
+*.iml
+.eclipse
+target/
+core_java/grep/data/
