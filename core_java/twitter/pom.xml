@@ -18,6 +18,11 @@
 
             <!--dependencies-->
     <dependencies>
+        <!--Jackson JSON-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
         <!--oauth 1.0 and httpclient4-->
         <dependency>
             <groupId>oauth.signpost</groupId>
