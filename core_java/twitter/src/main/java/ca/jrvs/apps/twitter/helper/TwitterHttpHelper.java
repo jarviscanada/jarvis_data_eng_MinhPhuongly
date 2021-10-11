@@ -60,10 +60,10 @@ public class TwitterHttpHelper implements HttpHelper{
         try{
             return httpExecutor(HttpMethod.GET,uri);
         }catch(IOException e){
-            throw new RuntimeException("IOExeception: failed to post!",e);
+            throw new RuntimeException("IOExeception: failed to get!",e);
         }
         catch(OAuthException e){
-            throw new RuntimeException("Error: Failed to post!",e);
+            throw new RuntimeException("Error: Failed to get!",e);
         }
     }
 }

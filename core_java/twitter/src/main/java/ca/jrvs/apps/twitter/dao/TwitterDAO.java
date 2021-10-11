@@ -1,12 +1,12 @@
 package ca.jrvs.apps.twitter.dao;
 
 import ca.jrvs.apps.twitter.example.JsonParser;
-import ca.jrvs.apps.twitter.helper.HttpHelper;
 import ca.jrvs.apps.twitter.helper.TwitterHttpHelper;
 import ca.jrvs.apps.twitter.model.Tweet;
 import org.apache.http.HttpResponse;
-import org.apache.http.entity.StringEntity;
 import org.apache.http.util.EntityUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -32,6 +32,9 @@ public class TwitterDAO implements CrdDao<Tweet,String>{
     private static final int HTTP_OK=200;
     private TwitterHttpHelper httpHelper;
 
+    //Logger
+    final Logger logger = LoggerFactory.getLogger(TwitterDAO.class);
+
     public TwitterDAO(TwitterHttpHelper httpHelper) {
         this.httpHelper = httpHelper;
     }
@@ -50,7 +53,7 @@ public class TwitterDAO implements CrdDao<Tweet,String>{
             throw new RuntimeException("URISyntaxException!",e);
         }
         HttpResponse response = httpHelper.httpPost(uri);
-        return parsingResponseToTweetObj(response);
+        return parsingResponseToTweetObj(response,HTTP_OK);
     }
 
     public String encodeMessage(String message) throws UnsupportedEncodingException {
@@ -77,13 +80,25 @@ public class TwitterDAO implements CrdDao<Tweet,String>{
         return new URI(uri);
     }
 
-    public Tweet parsingResponseToTweetObj(HttpResponse response) {
+    public Tweet parsingResponseToTweetObj(HttpResponse response, int expectedStatusCode) {
         Tweet result=null;
+
+        //check response status
+        int status = response.getStatusLine().getStatusCode();
+        if(status != expectedStatusCode){
+            try{
+                logger.info(EntityUtils.toString(response.getEntity()));
+            }catch (IOException e){
+                logger.error("No entity in response",e);
+            }
+            throw new RuntimeException("Unexpected HTTP status code: "+status);
+        }
+
         if (response.getEntity() == null){
             throw new RuntimeException("Null response!");
         }
 
-        //convert reponseEntity to json string
+        //convert responded Entity to json string
         String strContent;
         try{
             strContent = EntityUtils.toString(response.getEntity());
@@ -111,7 +126,7 @@ public class TwitterDAO implements CrdDao<Tweet,String>{
         }
         HttpResponse response = httpHelper.httpGet(uri);
 
-        return parsingResponseToTweetObj(response);
+        return parsingResponseToTweetObj(response,HTTP_OK);
     }
 
     public URI getDeleteURI(String s) throws URISyntaxException{
@@ -130,6 +145,6 @@ public class TwitterDAO implements CrdDao<Tweet,String>{
 
         HttpResponse response = httpHelper.httpPost(uri);
 
-        return parsingResponseToTweetObj(response);
+        return parsingResponseToTweetObj(response,HTTP_OK);
     }
 }
