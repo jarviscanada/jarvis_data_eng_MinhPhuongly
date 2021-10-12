@@ -3,50 +3,56 @@ package ca.jrvs.apps.twitter.service;
 import ca.jrvs.apps.twitter.dao.CrdDao;
 import ca.jrvs.apps.twitter.model.Tweet;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
 
-public class TwitterService implements Service{
+public class TwitterService implements Service {
     private CrdDao dao;
-    private String[] twitterFields = {"created_at","id","id_str","text","entities","coordinates",
-            "retweet_count","favorite_count","favorited","retweeted"};
+    private String[] twitterFields = {"created_at", "id", "id_str", "text", "entities", "coordinates",
+            "retweet_count", "favorite_count", "favorited", "retweeted"};
+
     public TwitterService(CrdDao dao) {
         this.dao = dao;
     }
 
     /**
      * Check if string is an unsigned long (64bit integer)
+     *
      * @param s
      * @return
      */
-    public boolean validID(String s){
-        try{
+    public boolean validID(String s) {
+        try {
             Long.parseUnsignedLong(s);
             return true;
-        }
-        catch(NumberFormatException e){
+        } catch (NumberFormatException e) {
             return false;
         }
     }
 
     /**
      * Text must not exceed 140 chars
+     *
      * @param s
      * @return
      */
-    public boolean validText(String s){
-        return s.length()<=140? true:false;
+    public boolean validText(String s) {
+        return s.length() <= 140 ? true : false;
     }
 
     /**
      * Longitude within range [-180,180]
      * Latitude within range [-90,90]
+     *
      * @param coordinates
      * @return
      */
-    public boolean validCoordinates(float[] coordinates){
-        if (coordinates.length==2){
+    public boolean validCoordinates(float[] coordinates) {
+        if (coordinates.length == 2) {
             //first number is longitude, second is latitude
-            if (coordinates[0]>-180 && coordinates[0]<180 && coordinates[1]>-90 && coordinates[1]<90){
+            if (coordinates[0] > -180 && coordinates[0] < 180 && coordinates[1] > -90 && coordinates[1] < 90) {
                 return true;
             }
             return false;
@@ -56,10 +62,9 @@ public class TwitterService implements Service{
 
     @Override
     public Tweet postTweet(Tweet tweet) {
-        if (validText(tweet.getText()) && validCoordinates(tweet.getCoordinates().getCoordinates())){
+        if (validText(tweet.getText()) && validCoordinates(tweet.getCoordinates().getCoordinates())) {
             return (Tweet) dao.create(tweet);
-        }
-        else {
+        } else {
             throw new IllegalArgumentException("Invalid input for postTweet");
         }
     }
@@ -69,17 +74,17 @@ public class TwitterService implements Service{
         HashSet<String> toNullFields = new HashSet<>();
         HashSet<String> fieldSet = new HashSet<>(Arrays.asList(fields));
 
-        if (validID(id)){
+        if (validID(id)) {
             Tweet result = (Tweet) dao.findById(id);
             //collect null fields
-            for (String field : twitterFields){
-                if (!fieldSet.contains(field)){
+            for (String field : twitterFields) {
+                if (!fieldSet.contains(field)) {
                     toNullFields.add(field);
                 }
             }
             //replace null fields to null
-            for (String field: toNullFields){
-                switch (field){
+            for (String field : toNullFields) {
+                switch (field) {
                     case "created_at":
                         result.setCreatedAt(null);
                         break;
@@ -113,8 +118,7 @@ public class TwitterService implements Service{
                 }
             }
             return result;
-        }
-        else{
+        } else {
             throw new IllegalArgumentException("Invalid id input");
         }
     }
@@ -122,12 +126,12 @@ public class TwitterService implements Service{
     @Override
     public List<Tweet> deleteTweets(String[] ids) {
         List<Tweet> result = new ArrayList<>();
-        for(String id: ids){
-            if (!validID(id)){
+        for (String id : ids) {
+            if (!validID(id)) {
                 throw new IllegalArgumentException("Invalid IDs");
             }
         }
-        for (String id: ids){
+        for (String id : ids) {
             result.add((Tweet) dao.deleteById(id));
         }
         return result;

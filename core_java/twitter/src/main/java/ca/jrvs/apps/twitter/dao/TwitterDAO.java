@@ -17,7 +17,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.stream.Collectors;
 
-public class TwitterDAO implements CrdDao<Tweet,String>{
+public class TwitterDAO implements CrdDao<Tweet, String> {
     //URI constants
     //Paths
     private static final String API_BASE_URI = "https://api.twitter.com";
@@ -25,15 +25,14 @@ public class TwitterDAO implements CrdDao<Tweet,String>{
     private static final String SHOW_PATH = "/1.1/statuses/show.json";
     private static final String DELETE_PATH = "/1.1/statuses/destroy";
     //Symbols
-    private static final String QUERRY_SYM="?";
-    private static final String AND_SIGN="&";
-    private static final String EQUAL_SIGN="=";
+    private static final String QUERRY_SYM = "?";
+    private static final String AND_SIGN = "&";
+    private static final String EQUAL_SIGN = "=";
     //Response code
-    private static final int HTTP_OK=200;
-    private TwitterHttpHelper httpHelper;
-
+    private static final int HTTP_OK = 200;
     //Logger
     final Logger logger = LoggerFactory.getLogger(TwitterDAO.class);
+    private TwitterHttpHelper httpHelper;
 
     public TwitterDAO(TwitterHttpHelper httpHelper) {
         this.httpHelper = httpHelper;
@@ -42,18 +41,18 @@ public class TwitterDAO implements CrdDao<Tweet,String>{
     @Override
     public Tweet create(Tweet entity) {
         URI uri;
-        try{
-            HashMap<String,String> params = new HashMap<>();
-            params.put("status",entity.getText()); //required param
-            params.put("long",String.valueOf(entity.getCoordinates().getCoordinates()[0]));
-            params.put("lat",String.valueOf(entity.getCoordinates().getCoordinates()[1]));
+        try {
+            HashMap<String, String> params = new HashMap<>();
+            params.put("status", entity.getText()); //required param
+            params.put("long", String.valueOf(entity.getCoordinates().getCoordinates()[0]));
+            params.put("lat", String.valueOf(entity.getCoordinates().getCoordinates()[1]));
             uri = getCreateURI(params);
 
-        }catch(URISyntaxException e){
-            throw new RuntimeException("URISyntaxException!",e);
+        } catch (URISyntaxException e) {
+            throw new RuntimeException("URISyntaxException!", e);
         }
         HttpResponse response = httpHelper.httpPost(uri);
-        return parsingResponseToTweetObj(response,HTTP_OK);
+        return parsingResponseToTweetObj(response, HTTP_OK);
     }
 
     public String encodeMessage(String message) throws UnsupportedEncodingException {
@@ -61,55 +60,55 @@ public class TwitterDAO implements CrdDao<Tweet,String>{
     }
 
     //Build create uri from a collection of key-value pairs
-    public URI getCreateURI(HashMap<String,String> m) throws URISyntaxException{
-        final String prefix=API_BASE_URI+POST_PATH+QUERRY_SYM;
+    public URI getCreateURI(HashMap<String, String> m) throws URISyntaxException {
+        final String prefix = API_BASE_URI + POST_PATH + QUERRY_SYM;
 
-        final String uri = m.keySet().stream().map(key-> {
+        final String uri = m.keySet().stream().map(key -> {
             try {
-                return key+EQUAL_SIGN+encodeMessage(m.get(key));
+                return key + EQUAL_SIGN + encodeMessage(m.get(key));
             } catch (UnsupportedEncodingException e) {
-                throw new RuntimeException("UnsupportedEncoding Exception",e);
+                throw new RuntimeException("UnsupportedEncoding Exception", e);
             }
-            }).collect(Collectors.joining("&",prefix,""));
+        }).collect(Collectors.joining("&", prefix, ""));
 
         return new URI(uri);
     }
 
-    public URI getFindByIdURI(String s) throws URISyntaxException{
-        final String uri=API_BASE_URI+SHOW_PATH+QUERRY_SYM+"id"+EQUAL_SIGN+s;
+    public URI getFindByIdURI(String s) throws URISyntaxException {
+        final String uri = API_BASE_URI + SHOW_PATH + QUERRY_SYM + "id" + EQUAL_SIGN + s;
         return new URI(uri);
     }
 
     public Tweet parsingResponseToTweetObj(HttpResponse response, int expectedStatusCode) {
-        Tweet result=null;
+        Tweet result = null;
 
         //check response status
         int status = response.getStatusLine().getStatusCode();
-        if(status != expectedStatusCode){
-            try{
+        if (status != expectedStatusCode) {
+            try {
                 logger.info(EntityUtils.toString(response.getEntity()));
-            }catch (IOException e){
-                logger.error("No entity in response",e);
+            } catch (IOException e) {
+                logger.error("No entity in response", e);
             }
-            throw new RuntimeException("Unexpected HTTP status code: "+status);
+            throw new RuntimeException("Unexpected HTTP status code: " + status);
         }
 
-        if (response.getEntity() == null){
+        if (response.getEntity() == null) {
             throw new RuntimeException("Null response!");
         }
 
         //convert responded Entity to json string
         String strContent;
-        try{
+        try {
             strContent = EntityUtils.toString(response.getEntity());
-        } catch (IOException e){
+        } catch (IOException e) {
             throw new RuntimeException("Unable to covnert response to String", e);
         }
 
-        try{
-            result = JsonParser.toObjectFromJson(strContent,Tweet.class);
-        }catch(IOException e){
-            throw new RuntimeException("Not able to convert json to object",e);
+        try {
+            result = JsonParser.toObjectFromJson(strContent, Tweet.class);
+        } catch (IOException e) {
+            throw new RuntimeException("Not able to convert json to object", e);
         }
 
         return result;
@@ -118,33 +117,32 @@ public class TwitterDAO implements CrdDao<Tweet,String>{
     @Override
     public Tweet findById(String s) {
         URI uri;
-        try{
-            uri=getFindByIdURI(s);
-        }
-        catch (URISyntaxException e){
-            throw new RuntimeException("Error: URISyntaxException",e);
+        try {
+            uri = getFindByIdURI(s);
+        } catch (URISyntaxException e) {
+            throw new RuntimeException("Error: URISyntaxException", e);
         }
         HttpResponse response = httpHelper.httpGet(uri);
 
-        return parsingResponseToTweetObj(response,HTTP_OK);
+        return parsingResponseToTweetObj(response, HTTP_OK);
     }
 
-    public URI getDeleteURI(String s) throws URISyntaxException{
-        final String uri=API_BASE_URI+DELETE_PATH+"/"+s+".json";
+    public URI getDeleteURI(String s) throws URISyntaxException {
+        final String uri = API_BASE_URI + DELETE_PATH + "/" + s + ".json";
         return new URI(uri);
     }
 
     @Override
     public Tweet deleteById(String s) {
         URI uri;
-        try{
+        try {
             uri = getDeleteURI(s);
-        }catch (URISyntaxException e){
-            throw new RuntimeException("Failed to make URI",e);
+        } catch (URISyntaxException e) {
+            throw new RuntimeException("Failed to make URI", e);
         }
 
         HttpResponse response = httpHelper.httpPost(uri);
 
-        return parsingResponseToTweetObj(response,HTTP_OK);
+        return parsingResponseToTweetObj(response, HTTP_OK);
     }
 }

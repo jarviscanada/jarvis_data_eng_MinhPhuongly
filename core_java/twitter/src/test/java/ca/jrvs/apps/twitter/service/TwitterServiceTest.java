@@ -10,7 +10,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
@@ -29,7 +28,7 @@ public class TwitterServiceTest {
     public void postTweet() {
         Tweet aTweet = new Tweet();
         Coordinates coordinates = new Coordinates();
-        coordinates.setCoordinates(new float[]{9,10});
+        coordinates.setCoordinates(new float[]{9, 10});
         aTweet.setText("Testing service");
         aTweet.setCoordinates(coordinates);
 
@@ -40,17 +39,17 @@ public class TwitterServiceTest {
     @Test
     public void showTweet() {
         when(dao.findById(any())).thenReturn(new Tweet());
-        service.showTweet("123456",new String[]{"text","coordinates"});
+        service.showTweet("123456", new String[]{"text", "coordinates"});
     }
 
-    @Test(expected=IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void showTweetFail() {
-        service.showTweet("1234e56",new String[]{"text","coordinates"});
+        service.showTweet("1234e56", new String[]{"text", "coordinates"});
     }
 
     @Test
     public void deleteTweets() {
         when(dao.deleteById(any())).thenReturn(new Tweet());
-        service.deleteTweets(new String[]{"123","456"});
+        service.deleteTweets(new String[]{"123", "456"});
     }
 }
