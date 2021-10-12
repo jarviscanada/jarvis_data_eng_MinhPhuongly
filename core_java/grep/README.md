@@ -18,13 +18,14 @@ phuongly/grep "place pattern here" /data /out/grep.out.txt
 
 #Implemenation
 ## Pseudocode
+```
 matchedLines = []  
-&nbsp;&nbsp;for file in listFilesRecursively(rootDir)  
-&nbsp;&nbsp;&nbsp;&nbsp;for line in readLines(file)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if containsPattern(line)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;matchedLines.add(line)  
+for file in listFilesRecursively(rootDir)  
+    for line in readLines(file)  
+        if containsPattern(line)  
+            matchedLines.add(line)
 writeToFile(matchedLines)
-
+```
 ## Performance Issue
 At the beginning, Scanner was used to read files' content which then become
 troublesome when dealing with big-size files. The problem then was solved 
@@ -41,11 +42,13 @@ Note: uber jar and docker image files also been tested manually
 For easier distribution, I made a docker image out of the uber jar file
 and published in to DockerHub. Check steps below:
 1. Generate a file named Dockerfile and its content using below cmd:  
-"cat > Dockerfile << EOF  
-   FROM openjdk:8-alpine  
-   COPY target/grep*.jar /usr/local/app/grep/lib/grep.jar  
-   ENTRYPOINT ["java","-jar","/usr/local/app/grep/lib/grep.jar"]  
-   EOF"
+```
+cat > Dockerfile << EOF  
+FROM openjdk:8-alpine  
+COPY target/grep*.jar /usr/local/app/grep/lib/grep.jar  
+ENTRYPOINT ["java","-jar","/usr/local/app/grep/lib/grep.jar"]  
+EOF
+```
 2. Run the file with below cmd:  
 "docker build -t phuongly/grep ."
 3. Login to Docker Hub and "docker push phuongly/grep" to publish 
