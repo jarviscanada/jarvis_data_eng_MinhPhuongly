@@ -2,17 +2,18 @@ package ca.jrvs.apps.twitter.service;
 
 import ca.jrvs.apps.twitter.dao.CrdDao;
 import ca.jrvs.apps.twitter.model.Tweet;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
-
+@org.springframework.stereotype.Service
 public class TwitterService implements Service {
     private CrdDao dao;
     private String[] twitterFields = {"created_at", "id", "id_str", "text", "entities", "coordinates",
             "retweet_count", "favorite_count", "favorited", "retweeted"};
-
+    @Autowired
     public TwitterService(CrdDao dao) {
         this.dao = dao;
     }
@@ -104,10 +105,10 @@ public class TwitterService implements Service {
                         result.setCoordinates(null);
                         break;
                     case "retweet_count":
-                        result.setRetweetCount(0);
+                        result.setRetweetCount(null);
                         break;
                     case "favorite_count":
-                        result.setFavoriteCount(0);
+                        result.setFavoriteCount(null);
                         break;
                     case "favorited":
                         result.setFavorited(null);

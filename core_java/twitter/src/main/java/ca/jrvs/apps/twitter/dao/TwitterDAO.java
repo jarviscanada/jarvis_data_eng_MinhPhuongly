@@ -1,12 +1,14 @@
 package ca.jrvs.apps.twitter.dao;
 
 import ca.jrvs.apps.twitter.example.JsonParser;
-import ca.jrvs.apps.twitter.helper.TwitterHttpHelper;
+import ca.jrvs.apps.twitter.helper.HttpHelper;
 import ca.jrvs.apps.twitter.model.Tweet;
 import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -17,6 +19,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.stream.Collectors;
 
+@Repository
 public class TwitterDAO implements CrdDao<Tweet, String> {
     //URI constants
     //Paths
@@ -32,9 +35,10 @@ public class TwitterDAO implements CrdDao<Tweet, String> {
     private static final int HTTP_OK = 200;
     //Logger
     final Logger logger = LoggerFactory.getLogger(TwitterDAO.class);
-    private TwitterHttpHelper httpHelper;
+    private HttpHelper httpHelper;
 
-    public TwitterDAO(TwitterHttpHelper httpHelper) {
+    @Autowired
+    public TwitterDAO(HttpHelper httpHelper) {
         this.httpHelper = httpHelper;
     }
 

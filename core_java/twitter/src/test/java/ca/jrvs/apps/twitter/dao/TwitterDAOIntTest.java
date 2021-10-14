@@ -25,7 +25,7 @@ public class TwitterDAOIntTest {
         Coordinates coordinates = new Coordinates();
         coordinates.setCoordinates(new float[]{1.021f, 2.201f});
         aTweet = new Tweet();
-        this.aTweet.setText("This is from java tested app haha!");
+        this.aTweet.setText("This is from java tested app haha! "+ System.currentTimeMillis());
         this.aTweet.setCoordinates(coordinates);
     }
 
