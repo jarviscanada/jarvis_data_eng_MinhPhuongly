@@ -45,7 +45,7 @@
       "description": [
         "Grep App: a Java application that implements the use of grep command in Linux. It scans recursively files in a directory and then return a sequence of strings that match the input pattern. The app can handle over-sized files thanks to the help of Stream API. It was tested manually and then packaged into an uber jar file using Maven. The file was then used to create docker image and published to Docker Hub.",
         "JDBC App: a Java app that applied DAO pattern in using JDBC to create CRUD functions working with a dockerized Postgres Database. The project used Maven to manage the dependencies and IntelliJ for developing and testing.",
-        "Twitter App: a Java app that apply MVC model and DAO pattern into performing read, create and delete a Tweet using Twitter APIs. Junit and Mockito were applied to build test cases. Spring was used to replace legacy main method and building uber jar file with Maven. The file was then tested manually to make Docker image. The image was published to DockerHub for easier sharing."
+        "Twitter App: a Java app that applied MVC model and DAO pattern into performing read, create and delete a Tweet using Twitter APIs. Junit and Mockito were applied to build test cases. Spring was used to replace legacy main method and building uber jar file with Maven. The file was then tested manually to make Docker image. The image was published to DockerHub for easier sharing."
       ],
       "git_url": "/core_java",
       "name": "Core Java Apps"
