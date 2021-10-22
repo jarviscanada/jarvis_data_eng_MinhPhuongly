@@ -51,16 +51,14 @@ public class FibonacciClimbingStairs {
     }
 
     public static int stairsClimbing(int n){
-        if(n==0)
-            return 0;
         if(n==1)
             return 1;
 
-        int preOne= 0;
-        int preTwo=1;
-        int result=1;
+        int preOne= 1;
+        int preTwo=2;
+        int result=2;
 
-        for(int i=2;i<=n;i++){
+        for(int i=2;i<n;i++){
             result = preOne + preTwo;
             preOne=preTwo;
             preTwo=result;

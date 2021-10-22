@@ -18,11 +18,6 @@ public class CompareTwoMaps {
      * @return
      */
     public static  boolean usingJavaAPI(Map m1, Map m2){
-        List<String> abc = new ArrayList<>();
-        HashSet<String> aaa = new HashSet<>();
-        abc.add("ss");
-        abc.add("eee");
-        System.out.println(abc.contains("eee"));
         return m1.equals(m2);
     }
 }
