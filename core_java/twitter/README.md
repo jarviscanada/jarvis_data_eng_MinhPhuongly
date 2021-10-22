@@ -1,6 +1,6 @@
 # Introduction
 This app will perform create, delete and read Tweet using Twitter APIs.
-The project structure applied MVC model and DAO pattern. It's requests were 
+The project structure applied MVC model and DAO pattern. Its requests were 
 authorized with OAuth1.0a and run using ```httpclient```. Jackson-databind
 was used for parsing Json string to java object and the vice versa. Junit and Mockito were used
 to perform unit tests and integration tests. The main method was then simplified 
