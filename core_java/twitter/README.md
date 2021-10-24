@@ -2,29 +2,29 @@
 This app will perform create, delete and read Tweet using Twitter APIs.
 The project structure applied MVC model and DAO pattern. Its requests were 
 authorized with OAuth1.0a and run using ```httpclient```. Jackson-databind
-was used for parsing Json string to java object and the vice versa. Junit and Mockito were used
+was used for parsing Json string to java object and vice versa. Junit and Mockito were used
 to perform unit tests and integration tests. The main method was then simplified 
 using Spring Boot. Dockerfile was used to create docker image and published it to 
 DockerHub
 
 # Quick Start
-##App usage:
+## App usage:
 - ```post```: post "tweet content" "longitude:latitude'
 - ```show```: show "tweet id" "view field 1" "view field 2" ... "view field n"
 - ```delete```: delete "tweet id 1" "tweet id 2" ... "tweet id n"
 
-##Create uber jar file from maven:
+## Create uber jar file from maven:
 ```
     mvn clean compile package -DskipTests
 ```
--DskipTests: tell maven to skip the test cases which will cause error to build
+`-DskipTests`: tell maven to skip the test cases which will cause error to build
 jar file due to TweetId required.
-##Run using uber jar:
+## Run using uber jar:
 ```
     java -jar path/to/jar/file post|show|delete [other params]
 ```
 Note: Make sure you already ```export``` the 4 secrets before running jar file.
-##Run using Docker:
+## Run using Docker:
 ```
 docker run --rm \
 -e consumerKey=YOUR_VALUE \
