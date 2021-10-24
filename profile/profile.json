@@ -37,15 +37,15 @@
   ],
   "jarvis_projects": [
     {
-      "description": "Implemented a cluster monitoring system which helps to automatically collect hardware specifications from Centos servers every minute using Crontab and Bash scripts. The data then will be stored in PostgresSQL database provisioned using Docker for later querying to answering some business questions such as the amount of memory used of each server within 5 minutes interval and detect server failures. The PostgresSQL container also can be controlled by a bash script. We used Git as a version control system to manage the code and followed GitFlow branching strategy.",
+      "description": "Implemented a cluster monitoring system that helps to automatically collect hardware specifications from Centos servers every minute using Crontab and Bash scripts. The data then will be stored in PostgresSQL database provisioned using Docker for later querying to answer some business questions such as the amount of memory used of each server within 5 minutes interval and detect server failures. The PostgresSQL container also can be controlled by a bash script. We used Git as a version control system to manage the code and followed GitFlow branching strategy.",
       "git_url": "/linux_sql",
       "name": "Cluster Monitor"
     },
     {
       "description": [
-        "Grep App: a Java application that implements the use of grep command in Linux. It scans recursively files in a directory and then return a sequence of strings that match the input pattern. The app can handle over-sized files thanks to the help of Stream API. It was tested manually and then packaged into an uber jar file using Maven. The file was then used to create docker image and published to Docker Hub.",
+        "Grep App: a Java application that implements the use of grep command in Linux. It scans recursively files in a directory and then returns a sequence of strings that match the input pattern. The app can handle oversized files thanks to the help of Stream API. It was tested manually and then packaged into an uber jar file using Maven. The file was then used to create a Docker image and published to Docker Hub.",
         "JDBC App: a Java app that applied DAO pattern in using JDBC to create CRUD functions working with a dockerized Postgres Database. The project used Maven to manage the dependencies and IntelliJ for developing and testing.",
-        "Twitter App: a Java app that applied MVC model and DAO pattern into performing read, create and delete a Tweet using Twitter APIs. Junit and Mockito were applied to build test cases. Spring was used to replace legacy main method and building uber jar file with Maven. The file was then tested manually to make Docker image. The image was published to DockerHub for easier sharing."
+        "Twitter App: a Java app that applied the MVC model and DAO pattern into performing read, create and delete a Tweet using Twitter APIs. Junit and Mockito were applied to build test cases. Spring was used to replace the legacy main method and build an uber jar file with Maven. The file was then tested manually to make a Docker image. The image was published to DockerHub for easier sharing."
       ],
       "git_url": "/core_java",
       "name": "Core Java Apps"
@@ -65,7 +65,7 @@
   "professional_experience": [
     {
       "company": "Jarvis",
-      "description": "Worked in a Data Engineer team that followed the Agile/Scrum model to implement multiple projects in Linux/Bash, Java, Docker and SQL. Conducted daily scrum meetings and bi-weekly sprint meetings with the team to keep on track with everyone's work.",
+      "description": "Worked in a Software and Data Engineer team that followed the Agile/Scrum model to implement multiple projects in Linux/Bash, Java, Docker and SQL. Conducted daily scrum meetings and bi-weekly sprint meetings with the team to keep on track with everyone's work.",
       "duration": "2021-present",
       "title": "Data Engineer"
     },
@@ -85,11 +85,11 @@
       "DynamoDB/NoSQL"
     ],
     "familiar": [
-      "S3",
-      "EC2",
+      "AWS",
       "Bootstrap",
       "React.Js",
       "Docker/VMWare",
+      "Maven",
       "Node.Js",
       "Socket.io",
       "C++"
@@ -103,5 +103,5 @@
       "Git/Github"
     ]
   },
-  "summary": "Being impassioned in exploring and experiencing new technologies, I got my bachelor degree in Communication and Computer Network and experienced roughly 1 year as an IT Operation Specialist at ILA English Language Center in Vietnam. Because of the job's characteristics, I got bored of daily repeated tasks and have decided to pursue a software development career. After completed a 2 years post-graduate program called Computer Software and Database Development in Canada with some Co-op and part-time experience as a full-stack web developer. I now have knowledge and experience in operating systems, computer networking and software programming. Continuously challenging things, improving and collecting technology knowledge is my favorite so far."
+  "summary": "Being impassioned in exploring and experiencing new technologies, I got my bachelor's degree in Communication and Computer Network and have one year of experience as an IT Operation Specialist at ILA English Language Center. With the desire to explore something more challenging, I decided to take a Computer Software and Database Development program in Canada. During school, I had a chance to be part of the school's student research team and then had a Co-op term as a full-stack web developer at ASA Energy Consulting.  \nAfter graduating, I have joined Jarvis and since then, collaborating with team members in an Agile/Scrum environment is now comfortable to me. Besides, I have acquired precious knowledge by working on many projects using valuable technologies such as Linux/Bash, PostgresSQL, Docker, Maven, etc. I now have knowledge and experience in operating systems, computer networking, and software programming. Applying my knowledge to solve real-world problems is what inspires me so far."
 }
