@@ -14,7 +14,10 @@
     <version>1.0-SNAPSHOT</version>
 
             <!--Make sure you use JDK1.8-->
-
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
 
             <!--dependencies-->
     <dependencies>
@@ -29,12 +32,7 @@
             <artifactId>signpost-commonshttp4</artifactId>
             <version>1.2.1.2</version>
         </dependency>
-        <!--Jackson JSON-->
-        <!--dependecy version is interited from the parent-->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-        </dependency>
+
         <!--testing-->
         <dependency>
             <groupId>org.mockito</groupId>
@@ -59,5 +57,16 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <!-- Specify main class to start -->
+                <configuration>
+                    <mainClass>ca.jrvs.apps.twitter.spring.TwitterCLISpringBoot</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
