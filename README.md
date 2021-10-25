@@ -1,7 +1,7 @@
 # Minh Phuong Ly . Jarvis Consulting
 
 Being impassioned in exploring and experiencing new technologies, I got my bachelor's degree in Communication and Computer Network and have one year of experience as an IT Operation Specialist at ILA English Language Center. With the desire to explore something more challenging, I decided to take a Computer Software and Database Development program in Canada. During school, I had a chance to be part of the school's student research team and then had a Co-op term as a full-stack web developer at ASA Energy Consulting.  
-After graduating, I have joined Jarvis and since then, collaborating with team members in an Agile/Scrum environment is now comfortable to me. Besides, I have acquired precious knowledge by working on many projects using valuable technologies such as Linux/Bash, PostgresSQL, Docker, Maven, etc. I now have knowledge and experience in operating systems, computer networking, and software programming. Applying my knowledge to solve real-world problems is what inspires and motivates me to move forward in me career.
+After graduating, I have joined Jarvis and since then, collaborating with team members in an Agile/Scrum environment is now comfortable to me. Besides, I have acquired precious knowledge by working on many projects using valuable technologies such as Linux/Bash, PostgresSQL, Docker, Maven, etc. I now have knowledge and experience in operating systems, computer networking, and software programming. Applying my knowledge to solve real-world problems is what inspires and motivates me to move forward in my career.
 
 ## Skills
 
