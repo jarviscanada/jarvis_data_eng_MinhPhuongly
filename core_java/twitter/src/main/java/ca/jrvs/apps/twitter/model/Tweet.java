@@ -32,13 +32,20 @@ public class Tweet {
     @JsonProperty("coordinates")
     private Coordinates coordinates;
     @JsonProperty("retweet_count")
-    private int retweetCount;
+    private Integer retweetCount;
     @JsonProperty("favorite_count")
-    private int favoriteCount;
+    private Integer favoriteCount;
     @JsonProperty("favorited")
     private Boolean favorited;
     @JsonProperty("retweeted")
     private Boolean retweeted;
+
+    public Tweet() {}
+
+    public Tweet(String text, Coordinates coordinates) {
+        this.text = text;
+        this.coordinates = coordinates;
+    }
 
     @Override
     public String toString() {
@@ -104,19 +111,19 @@ public class Tweet {
         this.coordinates = coordinates;
     }
 
-    public int getRetweetCount() {
+    public Integer getRetweetCount() {
         return retweetCount;
     }
 
-    public void setRetweetCount(int retweetCount) {
+    public void setRetweetCount(Integer retweetCount) {
         this.retweetCount = retweetCount;
     }
 
-    public int getFavoriteCount() {
+    public Integer getFavoriteCount() {
         return favoriteCount;
     }
 
-    public void setFavoriteCount(int favoriteCount) {
+    public void setFavoriteCount(Integer favoriteCount) {
         this.favoriteCount = favoriteCount;
     }
 

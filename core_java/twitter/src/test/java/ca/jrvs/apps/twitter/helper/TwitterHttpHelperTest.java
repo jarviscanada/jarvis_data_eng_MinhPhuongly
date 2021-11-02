@@ -9,22 +9,21 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import static org.junit.Assert.*;
-
 public class TwitterHttpHelperTest {
     private TwitterHttpHelper helper;
+
     @Before
     public void setUp() throws Exception {
         String consumerKey = System.getenv("consumerKey");
         String consumerSecret = System.getenv("consumerSecret");
         String accessToken = System.getenv("accessToken");
         String tokenSecret = System.getenv("tokenSecret");
-        System.out.println("consumerKey: "+consumerKey+
-                "\nconsumerSecret: "+consumerSecret+
-                "\naccessToken: "+accessToken+
-                "\ntokenSecret: "+tokenSecret);
+        System.out.println("consumerKey: " + consumerKey +
+                "\nconsumerSecret: " + consumerSecret +
+                "\naccessToken: " + accessToken +
+                "\ntokenSecret: " + tokenSecret);
 
-        helper = new TwitterHttpHelper(consumerKey,consumerSecret,accessToken,tokenSecret);
+        helper = new TwitterHttpHelper(consumerKey, consumerSecret, accessToken, tokenSecret);
     }
 
     @Test

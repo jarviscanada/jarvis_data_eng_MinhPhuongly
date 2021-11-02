@@ -25,7 +25,7 @@ public class FibonacciClimbingStairsTest {
 
     @Test
     public void stairsClimbing(){
-        assertNotEquals(5, FibonacciClimbingStairs.stairsClimbing(4));
-        assertEquals(5, FibonacciClimbingStairs.stairsClimbing(5));
+        assertNotEquals(6, FibonacciClimbingStairs.stairsClimbing(4));
+        assertEquals(2, FibonacciClimbingStairs.stairsClimbing(2));
     }
 }
