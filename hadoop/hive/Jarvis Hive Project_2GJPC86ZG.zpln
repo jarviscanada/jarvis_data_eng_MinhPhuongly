@@ -50,7 +50,7 @@
     {
       "text": "%hive\nDROP TABLE IF EXISTS wdi_csv_text;\nCREATE EXTERNAL TABLE wdi_csv_text\n(year INTEGER, countryName STRING, countryCode STRING, indicatorName STRING, indicatorCode STRING, indicatorValue FLOAT)\nROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\\n'\nLOCATION 'hdfs:///user/phuong/hive/wdi/wdi_csv_text';\n",
       "user": "anonymous",
-      "dateUpdated": "2021-10-28T14:39:57+0000",
+      "dateUpdated": "2021-10-31T22:57:51+0000",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -58,7 +58,7 @@
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "colWidth": 12,
+        "colWidth": 6,
         "editorMode": "ace/mode/sql",
         "fontSize": 9,
         "results": {},
@@ -95,7 +95,7 @@
     {
       "text": "%hive\nINSERT OVERWRITE TABLE wdi_csv_text\nSELECT * FROM wdi_gs;",
       "user": "anonymous",
-      "dateUpdated": "2021-10-28T14:40:26+0000",
+      "dateUpdated": "2021-10-31T22:57:57+0000",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -103,7 +103,7 @@
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "colWidth": 12,
+        "colWidth": 6,
         "editorMode": "ace/mode/sql",
         "fontSize": 9,
         "results": {},
@@ -310,7 +310,7 @@
     {
       "text": "%hive\nSELECT distinct(indicatorcode)\nFROM wdi_csv_text\nORDER BY indicatorcode\nLIMIT 20;",
       "user": "anonymous",
-      "dateUpdated": "2021-10-28T18:11:49+0000",
+      "dateUpdated": "2021-10-31T22:58:44+0000",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -318,7 +318,7 @@
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "colWidth": 12,
+        "colWidth": 6,
         "editorMode": "ace/mode/text",
         "fontSize": 9,
         "results": {
@@ -383,7 +383,7 @@
     {
       "text": "%hive\nDROP TABLE IF EXISTS wdi_gs_debug;\nCREATE EXTERNAL TABLE wdi_gs_debug \n(line String)\nROW FORMAT DELIMITED LINES TERMINATED BY '\\n'\nLOCATION 'gs://jarvis_dataeng_minh_phuong/datasets/wdi_2016';\n",
       "user": "anonymous",
-      "dateUpdated": "2021-10-28T18:13:00+0000",
+      "dateUpdated": "2021-10-31T22:58:51+0000",
       "progress": 0,
       "config": {
         "tableHide": false,
@@ -392,7 +392,7 @@
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "colWidth": 12,
+        "colWidth": 6,
         "editorMode": "ace/mode/sql",
         "fontSize": 9,
         "editorHide": false,
@@ -430,7 +430,7 @@
     {
       "text": "%hive\nDROP TABLE IF EXISTS wdi_opencsv_gs;\nCREATE EXTERNAL TABLE wdi_opencsv_gs\n(year INTEGER, countryName STRING, countryCode STRING, indicatorName STRING, indicatorCode STRING, indicatorValue FLOAT)\nROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'\nSTORED AS TEXTFILE\nLOCATION 'gs://jarvis_dataeng_minh_phuong/datasets/wdi_2016';",
       "user": "anonymous",
-      "dateUpdated": "2021-10-28T19:21:08+0000",
+      "dateUpdated": "2021-10-31T22:58:56+0000",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -438,7 +438,7 @@
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "colWidth": 12,
+        "colWidth": 6,
         "editorMode": "ace/mode/sql",
         "fontSize": 9,
         "results": {},
@@ -475,7 +475,7 @@
     {
       "text": "%hive\nDROP TABLE IF EXISTS wdi_opencsv_text;\nCREATE EXTERNAL TABLE wdi_opencsv_text\n(year INTEGER, countryName STRING, countryCode STRING, indicatorName STRING, indicatorCode STRING, indicatorValue FLOAT)\nROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'\nSTORED AS TEXTFILE\nLOCATION 'hdfs:///user/phuong/hive/wdi/wdi_opencsv_text';",
       "user": "anonymous",
-      "dateUpdated": "2021-10-28T19:34:10+0000",
+      "dateUpdated": "2021-10-31T22:59:00+0000",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -483,7 +483,7 @@
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "colWidth": 12,
+        "colWidth": 6,
         "editorMode": "ace/mode/sql",
         "fontSize": 9,
         "results": {},
@@ -520,7 +520,7 @@
     {
       "text": "%hive\nINSERT OVERWRITE TABLE wdi_opencsv_text\nSELECT * FROM wdi_opencsv_gs;",
       "user": "anonymous",
-      "dateUpdated": "2021-10-28T19:38:13+0000",
+      "dateUpdated": "2021-10-31T22:59:25+0000",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -565,7 +565,7 @@
     {
       "text": "%hive\nSELECT distinct(indicatorcode) FROM wdi_opencsv_text LIMIT 20;",
       "user": "anonymous",
-      "dateUpdated": "2021-10-28T20:11:57+0000",
+      "dateUpdated": "2021-10-31T22:59:34+0000",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -681,7 +681,7 @@
     {
       "text": "%hive\nDESCRIBE FORMATTED wdi_opencsv_text;\nDESCRIBE FORMATTED wdi_csv_text;",
       "user": "anonymous",
-      "dateUpdated": "2021-10-28T20:41:59+0000",
+      "dateUpdated": "2021-10-31T22:59:46+0000",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -689,7 +689,7 @@
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "colWidth": 12,
+        "colWidth": 6,
         "editorMode": "ace/mode/sql",
         "fontSize": 9,
         "results": {
@@ -785,7 +785,7 @@
     {
       "text": "%hive\nDROP VIEW IF EXISTS wdi_opencsv_text_view;\nCREATE VIEW wdi_opencsv_text_view AS \nSELECT CAST(year AS INTEGER) , countryName, countryCode, indicatorName, indicatorCode, CAST(indicatorValue AS FLOAT)\nFROM wdi_opencsv_text;",
       "user": "anonymous",
-      "dateUpdated": "2021-10-28T20:42:12+0000",
+      "dateUpdated": "2021-10-31T22:59:51+0000",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -793,7 +793,7 @@
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "colWidth": 12,
+        "colWidth": 6,
         "editorMode": "ace/mode/sql",
         "fontSize": 9,
         "results": {},
@@ -830,7 +830,7 @@
     {
       "text": "%hive\nDESCRIBE FORMATTED wdi_opencsv_text_view;",
       "user": "anonymous",
-      "dateUpdated": "2021-10-28T21:43:27+0000",
+      "dateUpdated": "2021-10-31T22:59:55+0000",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -838,7 +838,7 @@
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "colWidth": 12,
+        "colWidth": 6,
         "editorMode": "ace/mode/sql",
         "fontSize": 9,
         "results": {
@@ -944,7 +944,7 @@
     {
       "text": "%hive\nSELECT countryname, indicatorname, indicatorCode \nFROM wdi_opencsv_text \nWHERE UPPER(countryName)= \"CANADA\" and UPPER(indicatorname) like \"%GDP GROWTH%\"\nGROUP BY countryname, indicatorname, indicatorcode;",
       "user": "anonymous",
-      "dateUpdated": "2021-10-28T22:16:30+0000",
+      "dateUpdated": "2021-10-31T23:00:02+0000",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -952,7 +952,7 @@
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "colWidth": 12,
+        "colWidth": 6,
         "editorMode": "ace/mode/sql",
         "fontSize": 9,
         "results": {
@@ -1019,10 +1019,10 @@
     {
       "text": "%hive\nSELECT indicatorvalue, countryname, year \nFROM wdi_opencsv_text\nWHERE UPPER(countryname)=\"CANADA\" AND indicatorcode=\"NY.GDP.MKTP.KD.ZG\" AND year=\"2015\";",
       "user": "anonymous",
-      "dateUpdated": "2021-10-29T14:36:54+0000",
+      "dateUpdated": "2021-10-31T23:00:06+0000",
       "progress": 0,
       "config": {
-        "colWidth": 12,
+        "colWidth": 6,
         "fontSize": 9,
         "enabled": true,
         "results": {
@@ -1092,9 +1092,9 @@
       "$$hashKey": "object:262"
     },
     {
-      "text": "%md\n# QUESTION 6: Hive Partitions\n## Create `wdi_opencsv_text_partitions` table partitioned by `year`\n    DROP TABLE IF EXISTS wdi_opencsv_text_partitions;\n    \n    CREATE EXTERNAL TABLE wdi_opencsv_text_partitions\n    (countryName STRING, countryCode STRING, indicatorName STRING, indicatorCode STRING, indicatorValue String)\n    PARTITIONED BY (year String)\n    ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'\n    STORED AS TEXTFILE\n    LOCATION 'hdfs:///user/phuong/hive/wdi/wdi_opencsv_text_partitions';\n## Load data from `wdi_opencsv_text` to `wdi_opencsv_text_partitions` using dyname partition\n    SET hive.exec.dynamic.partition.mode=nonstrict;\n    \n    INSERT OVERWRITE TABLE wdi_opencsv_text_partitions\n    PARTITION(year)\n    SELECT * FROM wdi_opencsv_text;\nNotes:\n- `Set hive.exec.max.dynamic.partitions.pernode=1000` to set max amount of partition can be created per mapper/reducer. It's 100 by default.\n- `hive.exec.max.dynamic.partitions` : total amount of partitions can be created per querry\n- `hive.exec.max.created.files`: total amount of files can be created by all mapper/reducer\n\n## Inspect amount of partitions have been created in `wdi_opencsv_text_partitions` table\n    hdfs dfs -count -h /user/phuong/hive/wdi/wdi_opencsv_text_partitions;\nNote: above cmd return: count of directories, files, total_size and the container_name\n## Re-run the Canada GDP Growth 2015 against the `wdi_opencsv_text_partitions` table\n    SELECT indicatorvalue, countryname, year \n    FROM wdi_opencsv_text_partitions\n    WHERE UPPER(countryname)=\"CANADA\" AND indicatorcode=\"NY.GDP.MKTP.KD.ZG\" AND year=\"2015\";\nNote: the performance must be a lot better compared to querry with the non-partitioned table",
+      "text": "%md\n# QUESTION 7: Hive Partitions\n## Create `wdi_opencsv_text_partitions` table partitioned by `year`\n    DROP TABLE IF EXISTS wdi_opencsv_text_partitions;\n    \n    CREATE EXTERNAL TABLE wdi_opencsv_text_partitions\n    (countryName STRING, countryCode STRING, indicatorName STRING, indicatorCode STRING, indicatorValue String)\n    PARTITIONED BY (year String)\n    ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'\n    STORED AS TEXTFILE\n    LOCATION 'hdfs:///user/phuong/hive/wdi/wdi_opencsv_text_partitions';\n## Load data from `wdi_opencsv_text` to `wdi_opencsv_text_partitions` using dynamic partition\n    SET hive.exec.dynamic.partition.mode=nonstrict;\n    SET hive.stats.column.autogather=false;\n    FROM wdi_opencsv_text\n    INSERT OVERWRITE TABLE wdi_opencsv_text_partitions\n    PARTITION(year)\n    SELECT countryName, countryCode, indicatorName, indicatorCode, indicatorValue, year;\nNotes:\n- `Set hive.exec.max.dynamic.partitions.pernode=1000` to set max amount of partition can be created per mapper/reducer. It's 100 by default.\n- `hive.exec.max.dynamic.partitions` : total amount of partitions can be created per querry\n- `hive.exec.max.created.files`: total amount of files can be created by all mapper/reducer\n- `SET hive.stats.column.autogather=false` to turn of autogather column stats\n- Make sure the year (parition) column is at the end\n\n## Inspect amount of partitions have been created in `wdi_opencsv_text_partitions` table\n    hdfs dfs -count -h /user/phuong/hive/wdi/wdi_opencsv_text_partitions;\nNote: above cmd return: count of directories, files, total_size and the container_name\n## Re-run the Canada GDP Growth 2015 against the `wdi_opencsv_text_partitions` table\n    SELECT indicatorvalue, countryname, year \n    FROM wdi_opencsv_text_partitions\n    WHERE UPPER(countryname)=\"CANADA\" AND indicatorcode=\"NY.GDP.MKTP.KD.ZG\" AND year=\"2015\";\nNote: the performance must be a lot better compared to querry with the non-partitioned table",
       "user": "anonymous",
-      "dateUpdated": "2021-10-29T18:53:44+0000",
+      "dateUpdated": "2021-11-02T15:56:42+0000",
       "progress": 0,
       "config": {
         "colWidth": 12,
@@ -1119,7 +1119,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "<div class=\"markdown-body\">\n<h1>QUESTION 6: Hive Partitions</h1>\n<h2>Create <code>wdi_opencsv_text_partitions</code> table partitioned by <code>year</code></h2>\n<pre><code>DROP TABLE IF EXISTS wdi_opencsv_text_partitions;\n\nCREATE EXTERNAL TABLE wdi_opencsv_text_partitions\n(countryName STRING, countryCode STRING, indicatorName STRING, indicatorCode STRING, indicatorValue String)\nPARTITIONED BY (year String)\nROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'\nSTORED AS TEXTFILE\nLOCATION 'hdfs:///user/phuong/hive/wdi/wdi_opencsv_text_partitions';\n</code></pre>\n<h2>Load data from <code>wdi_opencsv_text</code> to <code>wdi_opencsv_text_partitions</code> using dyname partition</h2>\n<pre><code>SET hive.exec.dynamic.partition.mode=nonstrict;\n\nINSERT OVERWRITE TABLE wdi_opencsv_text_partitions\nPARTITION(year)\nSELECT * FROM wdi_opencsv_text;\n</code></pre>\n<p>Notes:</p>\n<ul>\n<li><code>Set hive.exec.max.dynamic.partitions.pernode=1000</code> to set max amount of partition can be created per mapper/reducer. It&rsquo;s 100 by default.</li>\n<li><code>hive.exec.max.dynamic.partitions</code> : total amount of partitions can be created per querry</li>\n<li><code>hive.exec.max.created.files</code>: total amount of files can be created by all mapper/reducer</li>\n</ul>\n<h2>Inspect amount of partitions have been created in <code>wdi_opencsv_text_partitions</code> table</h2>\n<pre><code>hdfs dfs -count -h /user/phuong/hive/wdi/wdi_opencsv_text_partitions;\n</code></pre>\n<p>Note: above cmd return: count of directories, files, total_size and the container_name</p>\n<h2>Re-run the Canada GDP Growth 2015 against the <code>wdi_opencsv_text_partitions</code> table</h2>\n<pre><code>SELECT indicatorvalue, countryname, year \nFROM wdi_opencsv_text_partitions\nWHERE UPPER(countryname)=&quot;CANADA&quot; AND indicatorcode=&quot;NY.GDP.MKTP.KD.ZG&quot; AND year=&quot;2015&quot;;\n</code></pre>\n<p>Note: the performance must be a lot better compared to querry with the non-partitioned table</p>\n\n</div>"
+            "data": "<div class=\"markdown-body\">\n<h1>QUESTION 7: Hive Partitions</h1>\n<h2>Create <code>wdi_opencsv_text_partitions</code> table partitioned by <code>year</code></h2>\n<pre><code>DROP TABLE IF EXISTS wdi_opencsv_text_partitions;\n\nCREATE EXTERNAL TABLE wdi_opencsv_text_partitions\n(countryName STRING, countryCode STRING, indicatorName STRING, indicatorCode STRING, indicatorValue String)\nPARTITIONED BY (year String)\nROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'\nSTORED AS TEXTFILE\nLOCATION 'hdfs:///user/phuong/hive/wdi/wdi_opencsv_text_partitions';\n</code></pre>\n<h2>Load data from <code>wdi_opencsv_text</code> to <code>wdi_opencsv_text_partitions</code> using dynamic partition</h2>\n<pre><code>SET hive.exec.dynamic.partition.mode=nonstrict;\nSET hive.stats.column.autogather=false;\nFROM wdi_opencsv_text\nINSERT OVERWRITE TABLE wdi_opencsv_text_partitions\nPARTITION(year)\nSELECT countryName, countryCode, indicatorName, indicatorCode, indicatorValue, year;\n</code></pre>\n<p>Notes:</p>\n<ul>\n<li><code>Set hive.exec.max.dynamic.partitions.pernode=1000</code> to set max amount of partition can be created per mapper/reducer. It&rsquo;s 100 by default.</li>\n<li><code>hive.exec.max.dynamic.partitions</code> : total amount of partitions can be created per querry</li>\n<li><code>hive.exec.max.created.files</code>: total amount of files can be created by all mapper/reducer</li>\n<li><code>SET hive.stats.column.autogather=false</code> to turn of autogather column stats</li>\n<li>Make sure the year (parition) column is at the end</li>\n</ul>\n<h2>Inspect amount of partitions have been created in <code>wdi_opencsv_text_partitions</code> table</h2>\n<pre><code>hdfs dfs -count -h /user/phuong/hive/wdi/wdi_opencsv_text_partitions;\n</code></pre>\n<p>Note: above cmd return: count of directories, files, total_size and the container_name</p>\n<h2>Re-run the Canada GDP Growth 2015 against the <code>wdi_opencsv_text_partitions</code> table</h2>\n<pre><code>SELECT indicatorvalue, countryname, year \nFROM wdi_opencsv_text_partitions\nWHERE UPPER(countryname)=&quot;CANADA&quot; AND indicatorcode=&quot;NY.GDP.MKTP.KD.ZG&quot; AND year=&quot;2015&quot;;\n</code></pre>\n<p>Note: the performance must be a lot better compared to querry with the non-partitioned table</p>\n\n</div>"
           }
         ]
       },
@@ -1129,15 +1129,15 @@
       "jobName": "paragraph_1635459433418_1109900621",
       "id": "paragraph_1635459433418_1109900621",
       "dateCreated": "2021-10-28T22:17:13+0000",
-      "dateStarted": "2021-10-29T18:53:44+0000",
-      "dateFinished": "2021-10-29T18:53:47+0000",
+      "dateStarted": "2021-11-02T15:56:42+0000",
+      "dateFinished": "2021-11-02T15:56:42+0000",
       "status": "FINISHED",
       "$$hashKey": "object:263"
     },
     {
       "text": "%hive\nDROP TABLE IF EXISTS wdi_opencsv_text_partitions;\nCREATE EXTERNAL TABLE wdi_opencsv_text_partitions\n(countryName STRING, countryCode STRING, indicatorName STRING, indicatorCode STRING, indicatorValue FLOAT)\nPARTITIONED BY (year INTEGER)\nROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'\nLOCATION 'hdfs:///user/phuong/hive/wdi/wdi_opencsv_text_partitions';",
       "user": "anonymous",
-      "dateUpdated": "2021-10-29T18:28:31+0000",
+      "dateUpdated": "2021-10-31T23:00:20+0000",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -1145,7 +1145,7 @@
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "colWidth": 12,
+        "colWidth": 6,
         "editorMode": "ace/mode/sql",
         "fontSize": 9,
         "results": {},
@@ -1182,7 +1182,7 @@
     {
       "text": "%hive\nSET hive.exec.dynamic.partition.mode=nonstrict;\nset hive.stats.column.autogather=false;\nFROM wdi_opencsv_text\nINSERT OVERWRITE TABLE wdi_opencsv_text_partitions\nPARTITION(year)\nSELECT countryName, countryCode, indicatorName, indicatorCode, indicatorValue, year;",
       "user": "anonymous",
-      "dateUpdated": "2021-10-29T18:29:01+0000",
+      "dateUpdated": "2021-10-31T23:00:25+0000",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -1190,7 +1190,7 @@
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "colWidth": 12,
+        "colWidth": 6,
         "editorMode": "ace/mode/sql",
         "fontSize": 9,
         "results": {},
@@ -1345,9 +1345,9 @@
       "$$hashKey": "object:267"
     },
     {
-      "text": "%md\n# QUESTION 7: Columnar File Optimization (optimize HQL using Columnar file)\n## Create `wdi_csv_parquet` table with Parquet file\n    DROP TABLE IF EXISTS wdi_csv_parquet;\n    CREATE EXTERNAL TABLE wdi_csv_parquet\n    (year INTEGER, countryName STRING, countryCode STRING, indicatorName STRING, indicatorCode STRING, indicatorValue FLOAT)\n    STORED AS PARQUET\n    LOCATION 'hdfs:///user/phuong/hive/wdi/wdi_csv_parquet';     \n## Load data from `wdi_opencsv_gs` to the partquet table\n    FROM wdi_opencsv_gs\n    INSERT OVERWRITE TABLE wdi_csv_parquet\n    SELECT *;\n## Compare file size between `wdi_csv_parquet` and `wdi_opencsv_text`\n    hdfs dfs -du -s -h /user/phuong/hive/wdi/wdi_opencsv_text;\n    hdfs dfs -du -s -h /user/phuong/hive/wdi/wdi_csv_parquet;\nNote: parquet files should be a lot smaller than text files\n## Compare runtime\n    SELECT count(countryName) FROM wdi_csv_parquet;\n    SELECT count(countryName) FROM wdi_opencsv_text;\nNotes:\n- The first execution on both tables are not much different (parquet gave a slight faster)\n- The second execution onward, parquet table give almost 4 times faster than the text table (26 seconds vs 99 seconds)\n## Execute `2015 GDP Growth` HQL against `wdi_csv_parquet` and `wdi_opencsv_text` tables, and then compare performance.\n    SELECT indicatorvalue, countryname, year \n    FROM wdi_csv_parquet\n    WHERE UPPER(countryname)=\"CANADA\" AND indicatorcode=\"NY.GDP.MKTP.KD.ZG\" AND year=\"2015\";\nNotes:\n- Same as the above comparison, it gave much faster performance sicne the second execution.",
+      "text": "%md\n# QUESTION 8: Columnar File Optimization (optimize HQL using Columnar file)\n## Create `wdi_csv_parquet` table with Parquet file\n    DROP TABLE IF EXISTS wdi_csv_parquet;\n    CREATE EXTERNAL TABLE wdi_csv_parquet\n    (year INTEGER, countryName STRING, countryCode STRING, indicatorName STRING, indicatorCode STRING, indicatorValue FLOAT)\n    STORED AS PARQUET\n    LOCATION 'hdfs:///user/phuong/hive/wdi/wdi_csv_parquet';     \n## Load data from `wdi_opencsv_gs` to the partquet table\n    FROM wdi_opencsv_gs\n    INSERT OVERWRITE TABLE wdi_csv_parquet\n    SELECT *;\n## Compare file size between `wdi_csv_parquet` and `wdi_opencsv_text`\n    hdfs dfs -du -s -h /user/phuong/hive/wdi/wdi_opencsv_text;\n    hdfs dfs -du -s -h /user/phuong/hive/wdi/wdi_csv_parquet;\nNote: parquet files should be a lot smaller than text files\n## Compare runtime\n    SELECT count(countryName) FROM wdi_csv_parquet;\n    SELECT count(countryName) FROM wdi_opencsv_text;\nNotes:\n- The first execution on both tables are not much different (parquet gave a slight faster)\n- The second execution onward, parquet table give almost 4 times faster than the text table (26 seconds vs 99 seconds)\n## Execute `2015 GDP Growth` HQL against `wdi_csv_parquet` and `wdi_opencsv_text` tables, and then compare performance.\n    SELECT indicatorvalue, countryname, year \n    FROM wdi_csv_parquet\n    WHERE UPPER(countryname)=\"CANADA\" AND indicatorcode=\"NY.GDP.MKTP.KD.ZG\" AND year=\"2015\";\nNotes:\n- Same as the above comparison, it gave much faster performance sicne the second execution.",
       "user": "anonymous",
-      "dateUpdated": "2021-10-29T19:35:00+0000",
+      "dateUpdated": "2021-11-02T15:56:51+0000",
       "progress": 0,
       "config": {
         "tableHide": false,
@@ -1372,7 +1372,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "<div class=\"markdown-body\">\n<h1>QUESTION 7: Columnar File Optimization (optimize HQL using Columnar file)</h1>\n<h2>Create <code>wdi_csv_parquet</code> table with Parquet file</h2>\n<pre><code>DROP TABLE IF EXISTS wdi_csv_parquet;\nCREATE EXTERNAL TABLE wdi_csv_parquet\n(year INTEGER, countryName STRING, countryCode STRING, indicatorName STRING, indicatorCode STRING, indicatorValue FLOAT)\nSTORED AS PARQUET\nLOCATION 'hdfs:///user/phuong/hive/wdi/wdi_csv_parquet';     \n</code></pre>\n<h2>Load data from <code>wdi_opencsv_gs</code> to the partquet table</h2>\n<pre><code>FROM wdi_opencsv_gs\nINSERT OVERWRITE TABLE wdi_csv_parquet\nSELECT *;\n</code></pre>\n<h2>Compare file size between <code>wdi_csv_parquet</code> and <code>wdi_opencsv_text</code></h2>\n<pre><code>hdfs dfs -du -s -h /user/phuong/hive/wdi/wdi_opencsv_text;\nhdfs dfs -du -s -h /user/phuong/hive/wdi/wdi_csv_parquet;\n</code></pre>\n<p>Note: parquet files should be a lot smaller than text files</p>\n<h2>Compare runtime</h2>\n<pre><code>SELECT count(countryName) FROM wdi_csv_parquet;\nSELECT count(countryName) FROM wdi_opencsv_text;\n</code></pre>\n<p>Notes:</p>\n<ul>\n<li>The first execution on both tables are not much different (parquet gave a slight faster)</li>\n<li>The second execution onward, parquet table give almost 4 times faster than the text table (26 seconds vs 99 seconds)</li>\n</ul>\n<h2>Execute <code>2015 GDP Growth</code> HQL against <code>wdi_csv_parquet</code> and <code>wdi_opencsv_text</code> tables, and then compare performance.</h2>\n<pre><code>SELECT indicatorvalue, countryname, year \nFROM wdi_csv_parquet\nWHERE UPPER(countryname)=&quot;CANADA&quot; AND indicatorcode=&quot;NY.GDP.MKTP.KD.ZG&quot; AND year=&quot;2015&quot;;\n</code></pre>\n<p>Notes:</p>\n<ul>\n<li>Same as the above comparison, it gave much faster performance sicne the second execution.</li>\n</ul>\n\n</div>"
+            "data": "<div class=\"markdown-body\">\n<h1>QUESTION 8: Columnar File Optimization (optimize HQL using Columnar file)</h1>\n<h2>Create <code>wdi_csv_parquet</code> table with Parquet file</h2>\n<pre><code>DROP TABLE IF EXISTS wdi_csv_parquet;\nCREATE EXTERNAL TABLE wdi_csv_parquet\n(year INTEGER, countryName STRING, countryCode STRING, indicatorName STRING, indicatorCode STRING, indicatorValue FLOAT)\nSTORED AS PARQUET\nLOCATION 'hdfs:///user/phuong/hive/wdi/wdi_csv_parquet';     \n</code></pre>\n<h2>Load data from <code>wdi_opencsv_gs</code> to the partquet table</h2>\n<pre><code>FROM wdi_opencsv_gs\nINSERT OVERWRITE TABLE wdi_csv_parquet\nSELECT *;\n</code></pre>\n<h2>Compare file size between <code>wdi_csv_parquet</code> and <code>wdi_opencsv_text</code></h2>\n<pre><code>hdfs dfs -du -s -h /user/phuong/hive/wdi/wdi_opencsv_text;\nhdfs dfs -du -s -h /user/phuong/hive/wdi/wdi_csv_parquet;\n</code></pre>\n<p>Note: parquet files should be a lot smaller than text files</p>\n<h2>Compare runtime</h2>\n<pre><code>SELECT count(countryName) FROM wdi_csv_parquet;\nSELECT count(countryName) FROM wdi_opencsv_text;\n</code></pre>\n<p>Notes:</p>\n<ul>\n<li>The first execution on both tables are not much different (parquet gave a slight faster)</li>\n<li>The second execution onward, parquet table give almost 4 times faster than the text table (26 seconds vs 99 seconds)</li>\n</ul>\n<h2>Execute <code>2015 GDP Growth</code> HQL against <code>wdi_csv_parquet</code> and <code>wdi_opencsv_text</code> tables, and then compare performance.</h2>\n<pre><code>SELECT indicatorvalue, countryname, year \nFROM wdi_csv_parquet\nWHERE UPPER(countryname)=&quot;CANADA&quot; AND indicatorcode=&quot;NY.GDP.MKTP.KD.ZG&quot; AND year=&quot;2015&quot;;\n</code></pre>\n<p>Notes:</p>\n<ul>\n<li>Same as the above comparison, it gave much faster performance sicne the second execution.</li>\n</ul>\n\n</div>"
           }
         ]
       },
@@ -1382,8 +1382,8 @@
       "jobName": "paragraph_1635533552335_1713676338",
       "id": "paragraph_1635533552335_1713676338",
       "dateCreated": "2021-10-29T18:52:32+0000",
-      "dateStarted": "2021-10-29T19:35:00+0000",
-      "dateFinished": "2021-10-29T19:35:00+0000",
+      "dateStarted": "2021-11-02T15:56:51+0000",
+      "dateFinished": "2021-11-02T15:56:51+0000",
       "status": "FINISHED",
       "$$hashKey": "object:268"
     },
@@ -1740,9 +1740,9 @@
       "$$hashKey": "object:274"
     },
     {
-      "text": "%md\n# QUESTION 8: Find Highest GDP Growth using Hive SQL and Spark SQL\n## Use Hive SQL\n    SELECT t1.indicatorValue, t1.year, t1.countryName \n    FROM wdi_csv_parquet t1\n    INNER JOIN (\n        SELECT MAX(indicatorValue) AS maxValue, countryName\n        FROM wdi_csv_parquet\n        WHERE indicatorCode = \"NY.GDP.MKTP.KD.ZG\" AND indicatorValue <> 0\n        GROUP BY countryName\n    ) t2\n    ON t1.indicatorValue = t2.maxValue AND t1.countryName = t2.countryName;\nNotes:\n- Find the max GDP Growth of each country\n- Join the result set with the current table on the maxValues and countryName for picking out the year.\n\n## Use Spark SQL\n    SELECT t1.indicatorValue, t1.year, t1.countryName \n    FROM wdi_csv_parquet t1\n    INNER JOIN (\n        SELECT MAX(indicatorValue) AS maxValue, countryName\n        FROM wdi_csv_parquet\n        WHERE indicatorCode = \"NY.GDP.MKTP.KD.ZG\" AND indicatorValue <> 0\n        GROUP BY countryName\n    ) t2\n    ON t1.indicatorValue = t2.maxValue AND t1.countryName = t2.countryName;\n",
+      "text": "%md\n# QUESTION 9: Find Highest GDP Growth using Hive SQL and Spark SQL\n## Use Hive SQL\n    SELECT t1.indicatorValue, t1.year, t1.countryName \n    FROM wdi_csv_parquet t1\n    INNER JOIN (\n        SELECT MAX(indicatorValue) AS maxValue, countryName\n        FROM wdi_csv_parquet\n        WHERE indicatorCode = \"NY.GDP.MKTP.KD.ZG\" AND indicatorValue <> 0\n        GROUP BY countryName\n    ) t2\n    ON t1.indicatorValue = t2.maxValue AND t1.countryName = t2.countryName;\nNotes:\n- Find the max GDP Growth of each country\n- Join the result set with the current table on the maxValues and countryName for picking out the year.\n\n## Use Spark SQL\n    SELECT t1.indicatorValue, t1.year, t1.countryName \n    FROM wdi_csv_parquet t1\n    INNER JOIN (\n        SELECT MAX(indicatorValue) AS maxValue, countryName\n        FROM wdi_csv_parquet\n        WHERE indicatorCode = \"NY.GDP.MKTP.KD.ZG\" AND indicatorValue <> 0\n        GROUP BY countryName\n    ) t2\n    ON t1.indicatorValue = t2.maxValue AND t1.countryName = t2.countryName;\n",
       "user": "anonymous",
-      "dateUpdated": "2021-10-29T22:08:48+0000",
+      "dateUpdated": "2021-11-02T15:57:04+0000",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -1754,11 +1754,22 @@
         "editorMode": "ace/mode/markdown",
         "fontSize": 9,
         "results": {},
-        "enabled": true
+        "enabled": true,
+        "editorHide": true,
+        "tableHide": false
       },
       "settings": {
         "params": {},
         "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h1>QUESTION 9: Find Highest GDP Growth using Hive SQL and Spark SQL</h1>\n<h2>Use Hive SQL</h2>\n<pre><code>SELECT t1.indicatorValue, t1.year, t1.countryName \nFROM wdi_csv_parquet t1\nINNER JOIN (\n    SELECT MAX(indicatorValue) AS maxValue, countryName\n    FROM wdi_csv_parquet\n    WHERE indicatorCode = &quot;NY.GDP.MKTP.KD.ZG&quot; AND indicatorValue &lt;&gt; 0\n    GROUP BY countryName\n) t2\nON t1.indicatorValue = t2.maxValue AND t1.countryName = t2.countryName;\n</code></pre>\n<p>Notes:</p>\n<ul>\n<li>Find the max GDP Growth of each country</li>\n<li>Join the result set with the current table on the maxValues and countryName for picking out the year.</li>\n</ul>\n<h2>Use Spark SQL</h2>\n<pre><code>SELECT t1.indicatorValue, t1.year, t1.countryName \nFROM wdi_csv_parquet t1\nINNER JOIN (\n    SELECT MAX(indicatorValue) AS maxValue, countryName\n    FROM wdi_csv_parquet\n    WHERE indicatorCode = &quot;NY.GDP.MKTP.KD.ZG&quot; AND indicatorValue &lt;&gt; 0\n    GROUP BY countryName\n) t2\nON t1.indicatorValue = t2.maxValue AND t1.countryName = t2.countryName;\n</code></pre>\n\n</div>"
+          }
+        ]
       },
       "apps": [],
       "runtimeInfos": {},
@@ -1766,13 +1777,15 @@
       "jobName": "paragraph_1635535345190_729931310",
       "id": "paragraph_1635535345190_729931310",
       "dateCreated": "2021-10-29T19:22:25+0000",
-      "status": "READY",
+      "dateStarted": "2021-11-02T15:57:04+0000",
+      "dateFinished": "2021-11-02T15:57:04+0000",
+      "status": "FINISHED",
       "$$hashKey": "object:275"
     },
     {
       "text": "%hive\nSELECT t1.indicatorValue, t1.year, t1.countryName \nFROM wdi_csv_parquet t1\nINNER JOIN (\n    SELECT MAX(indicatorValue) AS maxValue, countryName\n    FROM wdi_csv_parquet\n    WHERE indicatorCode = \"NY.GDP.MKTP.KD.ZG\" AND indicatorValue <> 0\n    GROUP BY countryName\n) t2\nON t1.indicatorValue = t2.maxValue AND t1.countryName = t2.countryName;\n",
       "user": "anonymous",
-      "dateUpdated": "2021-10-29T22:08:56+0000",
+      "dateUpdated": "2021-10-31T23:01:20+0000",
       "progress": 0,
       "config": {
         "lineNumbers": true,
@@ -1781,7 +1794,7 @@
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "colWidth": 12,
+        "colWidth": 6,
         "editorMode": "ace/mode/sql",
         "fontSize": 9,
         "results": {
@@ -1848,7 +1861,7 @@
     {
       "text": "%spark.sql\nSELECT t1.indicatorValue, t1.year, t1.countryName \nFROM wdi_csv_parquet t1\nINNER JOIN (\n    SELECT MAX(indicatorValue) AS maxValue, countryName\n    FROM wdi_csv_parquet\n    WHERE indicatorCode = \"NY.GDP.MKTP.KD.ZG\" AND indicatorValue <> 0\n    GROUP BY countryName\n) t2\nON t1.indicatorValue = t2.maxValue AND t1.countryName = t2.countryName;",
       "user": "anonymous",
-      "dateUpdated": "2021-10-29T22:08:21+0000",
+      "dateUpdated": "2021-10-31T23:01:25+0000",
       "progress": 40,
       "config": {
         "editorSetting": {
@@ -1856,7 +1869,7 @@
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "colWidth": 12,
+        "colWidth": 6,
         "editorMode": "ace/mode/text",
         "fontSize": 9,
         "results": {
@@ -1915,19 +1928,19 @@
           "values": [
             {
               "jobUrl": "http://jarvis-bootcamp-m.us-east1-c.c.dataeng-bootcamp-330314.internal:37071/jobs/job?id=0",
-              "$$hashKey": "object:4111"
+              "$$hashKey": "object:3980"
             },
             {
               "jobUrl": "http://jarvis-bootcamp-m.us-east1-c.c.dataeng-bootcamp-330314.internal:37071/jobs/job?id=1",
-              "$$hashKey": "object:4112"
+              "$$hashKey": "object:3981"
             },
             {
               "jobUrl": "http://jarvis-bootcamp-m.us-east1-c.c.dataeng-bootcamp-330314.internal:37071/jobs/job?id=3",
-              "$$hashKey": "object:4113"
+              "$$hashKey": "object:3982"
             },
             {
               "jobUrl": "http://jarvis-bootcamp-m.us-east1-c.c.dataeng-bootcamp-330314.internal:37071/jobs/job?id=4",
-              "$$hashKey": "object:4114"
+              "$$hashKey": "object:3983"
             }
           ],
           "interpreterSettingId": "spark"
@@ -1943,9 +1956,9 @@
       "$$hashKey": "object:277"
     },
     {
-      "text": "%md\n# QUESTION 9: Sort GDP by Country and Year\n## Sort by countryName and Year, return GDP Growth, CountryName, Year and indicatorCode\n    SELECT countryName, Year, indicatorCode, indicatorValue\n    FROM wdi_csv_parquet\n    WHERE indicatorCode = \"NY.GDP.MKTP.KD.ZG\"\n    ORDER BY countryName, year;\n",
+      "text": "%md\n# QUESTION 10: Sort GDP by Country and Year\n## Sort by countryName and Year, return GDP Growth, CountryName, Year and indicatorCode\n    SELECT countryName, Year, indicatorCode, indicatorValue\n    FROM wdi_csv_parquet\n    WHERE indicatorCode = \"NY.GDP.MKTP.KD.ZG\"\n    ORDER BY countryName, year;\n",
       "user": "anonymous",
-      "dateUpdated": "2021-10-30T01:02:36+0000",
+      "dateUpdated": "2021-11-02T15:57:13+0000",
       "progress": 0,
       "config": {
         "colWidth": 12,
@@ -1970,7 +1983,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "<div class=\"markdown-body\">\n<h1>QUESTION 9: Sort GDP by Country and Year</h1>\n<h2>Sort by countryName and Year, return GDP Growth, CountryName, Year and indicatorCode</h2>\n<pre><code>SELECT countryName, Year, indicatorCode, indicatorValue\nFROM wdi_csv_parquet\nWHERE indicatorCode = &quot;NY.GDP.MKTP.KD.ZG&quot;\nORDER BY countryName, year;\n</code></pre>\n\n</div>"
+            "data": "<div class=\"markdown-body\">\n<h1>QUESTION 10: Sort GDP by Country and Year</h1>\n<h2>Sort by countryName and Year, return GDP Growth, CountryName, Year and indicatorCode</h2>\n<pre><code>SELECT countryName, Year, indicatorCode, indicatorValue\nFROM wdi_csv_parquet\nWHERE indicatorCode = &quot;NY.GDP.MKTP.KD.ZG&quot;\nORDER BY countryName, year;\n</code></pre>\n\n</div>"
           }
         ]
       },
@@ -1980,15 +1993,15 @@
       "jobName": "paragraph_1635544322794_271903589",
       "id": "paragraph_1635544322794_271903589",
       "dateCreated": "2021-10-29T21:52:02+0000",
-      "dateStarted": "2021-10-30T01:02:36+0000",
-      "dateFinished": "2021-10-30T01:02:39+0000",
+      "dateStarted": "2021-11-02T15:57:13+0000",
+      "dateFinished": "2021-11-02T15:57:13+0000",
       "status": "FINISHED",
       "$$hashKey": "object:278"
     },
     {
       "text": "%hive\nSELECT countryName, Year, indicatorCode, indicatorValue\nFROM wdi_csv_parquet\nWHERE indicatorCode = \"NY.GDP.MKTP.KD.ZG\"\nORDER BY countryName, year;",
       "user": "anonymous",
-      "dateUpdated": "2021-10-30T01:01:08+0000",
+      "dateUpdated": "2021-10-31T23:01:43+0000",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -1996,10 +2009,41 @@
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "colWidth": 12,
+        "colWidth": 6,
         "editorMode": "ace/mode/sql",
         "fontSize": 9,
-        "results": {},
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "countryname": "string",
+                      "year": "string",
+                      "indicatorcode": "string",
+                      "indicatorvalue": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
         "enabled": true
       },
       "settings": {
@@ -2033,7 +2077,7 @@
     {
       "text": "%hive\nSELECT countryName, Year, indicatorCode, indicatorValue\nFROM wdi_csv_parquet\nWHERE indicatorCode = \"NY.GDP.MKTP.KD.ZG\"\nSORT BY countryName, year;",
       "user": "anonymous",
-      "dateUpdated": "2021-10-31T14:29:08+0000",
+      "dateUpdated": "2021-10-31T23:01:48+0000",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -2041,7 +2085,7 @@
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "colWidth": 12,
+        "colWidth": 6,
         "editorMode": "ace/mode/sql",
         "fontSize": 9,
         "results": {
