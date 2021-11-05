@@ -19,6 +19,8 @@
 
 ### cluster architecture diagram
 ![Hadoop Architecture](./assets/HadoopArchitecture.png)
+  
+
 ###Big data tools
   - MapReduce
     - MapReduce is a framework that allows developers to implement algorithms in the MapReduce programming model for computing large-scale data in the distributed file system. It consists of 2 parts: Map and Reduce. The number of reducers will be less than the number of mappers due to the characteristic of the MapReduce model.
