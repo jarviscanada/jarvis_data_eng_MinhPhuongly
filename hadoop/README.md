@@ -19,9 +19,7 @@
 
 ### cluster architecture diagram
 ![Hadoop Architecture](./assets/HadoopArchitecture.png)
-  
-
-###Big data tools
+### Big data tools
   - MapReduce
     - MapReduce is a framework that allows developers to implement algorithms in the MapReduce programming model for computing large-scale data in the distributed file system. It consists of 2 parts: Map and Reduce. The number of reducers will be less than the number of mappers due to the characteristic of the MapReduce model.
     - Map phase: file chunks are read with the help of InputFormat, InputSplit, and RecordReader to give output as a set of key-value pairs (key is the offset, value is the line content) for Mapper to use. The Mapper then maps the data to give an output of desired key-value pairs. There can be a Combiner that is used as a small mapper-side reducer to reduce the amount of data that need to be transferred over the network. Finally, Partitioner will send the key-value pairs to the corresponding Reducer in the cluster.   
