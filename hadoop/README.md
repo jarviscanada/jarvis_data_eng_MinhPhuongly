@@ -17,7 +17,7 @@
 - Master Node (2 CPU cores - 12 GB Memory - 100 GB Storage): 1 Node
 - Worker Node (2 CPU Cores - 12 GB Memory - 100 GB Storage): 2 Nodes
 
-### cluster architecture diagram
+### Cluster architecture diagram
 ![Hadoop Architecture](./assets/HadoopArchitecture.png)
 ### Big data tools
   - MapReduce
