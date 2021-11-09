@@ -9,7 +9,7 @@ After graduating, I have joined Jarvis and since then, collaborating with team m
 
 **Competent:** GitFlow, Flask, JavaScript ES6/JQuery, HTML/CSS, DynamoDB/NoSQL
 
-**Familiar:** AWS, Bootstrap, React.Js, Docker/VMWare, Maven, Node.Js, Socket.io, C++
+**Familiar:** AWS, Bootstrap, React.Js, Docker/VMWare, Zeppelin/Hive, Maven, Node.Js, Socket.io, C++
 
 ## Jarvis Projects
 
@@ -23,6 +23,8 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_MinhPhuong
   - Grep App: a Java application that implements the use of grep command in Linux. It scans recursively files in a directory and then returns a sequence of strings that match the input pattern. The app can handle oversized files thanks to the help of Stream API. It was tested manually and then packaged into an uber jar file using Maven. The file was then used to create a Docker image and published to Docker Hub.
   - JDBC App: a Java app that applied DAO pattern in using JDBC to create CRUD functions working with a dockerized Postgres Database. The project used Maven to manage the dependencies and IntelliJ for developing and testing.
   - Twitter App: a Java app that applied the MVC model and DAO pattern into performing read, create and delete a Tweet using Twitter APIs. Junit and Mockito were applied to build test cases. Spring was used to replace the legacy main method and build an uber jar file with Maven. The file was then tested manually to make a Docker image. The image was published to DockerHub for easier sharing.
+
+**Big Data Processing** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_MinhPhuongly.git/tree/master/hadoop)]: The project uses Hadoop ecosystem to perform big data processing in a distributed file system provisioned using Dataproc-GCP (1 Master - 2 Worker Nodes). A public BigQuery table called wdi_2016 was used as the big data. Hive, Zeppelin, HDFS, and YARN were the tools used to answer some business questions. All the solutions were written, executed, and stored in paragraphs of Zeppelin Notebook, which can be later edited and re-used.
 
 
 ## Highlighted Projects
