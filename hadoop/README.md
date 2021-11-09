@@ -35,7 +35,7 @@
   - Hive
     - Hive is developed by Facebook which provide an ability of converting Hive SQL (HQL) into jobs in a distributed file system with the help of an execution engine (MapReduce/Tez/Spark).
     - Managed table and External table are two types of tables in Hive. There is not much difference in performance between the two types. The main difference is when `DROP` a managed table, all its metadata and data files are deleted while the data files remain untouched in the External table.
-    - Metastore and Execution engine are Hive services. Execution Engine provides features to execute HQL. Metastore stores metadata (schema, table name, partition, Serde, etc.) and data of managed tables.
+    - Metastore and Execution engine are Hive services. Execution Engine provides features to execute HQL into jobs to be performed in YARN. Metastore stores metadata (schema, table name, partition, Serde, etc.) and data of managed tables in a RDBMS of user's choice.
   - Zeppelin
     - Zeppelin provides a web interface to work with Hadoop. It allows writing executing and storing the commands in `Notebook`, which can be edited and re-used.
     - The `Notebook` organizes tasks in `paragraphs` and can be executed using `interpreters`. Users can configure their own `interpreter` in Zeppelin and use it in a `paragraph` by placing the `%interpreter_name` command above the code block.
