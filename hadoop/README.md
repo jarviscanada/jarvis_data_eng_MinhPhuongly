@@ -33,7 +33,9 @@
     - `NameNode` stores Metadata includes file paths, replica location, size, permissions, etc. It also receives block reports and heartbeat messages from DataNode to keep track of the DataNodes status and manage the data across the cluster.
     - `DataNode` stores data blocks which are chunks of a big data file (each block has 128 MB data by default). DataNode will send block reports and heartbeat signals to NameNode to keep it up-to-date. If there is no heartbeat within 10 minutes, a DataNode is considered death/unavailable. Hence, NameNode will check and replicate data on the death node from other nodes to make sure there are 3 replications (by default) of each block across the cluster.
   - Hive
-    - Some details about Hive go here.
+    - Hive is developed by Facebook which provide an ability of converting Hive SQL (HQL) into jobs in a distributed file system with the help of an execution engine (MapReduce/Tez/Spark).
+    - Managed table and External table are two types of tables in Hive. There is not much difference in performance between the two types. The main difference is when `DROP` a managed table, all its metadata and data files are deleted while the data files remain untouched in the External table.
+    - Metastore and Execution engine are Hive services. Execution Engine provides features to execute HQL into jobs to be performed in YARN. Metastore stores metadata (schema, table name, partition, Serde, etc.) and data of managed tables in a RDBMS of user's choice.
   - Zeppelin
     - Zeppelin provides a web interface to work with Hadoop. It allows writing executing and storing the commands in `Notebook`, which can be edited and re-used.
     - The `Notebook` organizes tasks in `paragraphs` and can be executed using `interpreters`. Users can configure their own `interpreter` in Zeppelin and use it in a `paragraph` by placing the `%interpreter_name` command above the code block.
