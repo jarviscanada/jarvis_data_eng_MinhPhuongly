@@ -81,12 +81,12 @@ highlighted_projects:
 #The description must be more than 25 words. If your experience is not software related, please focus on soft skills and achievements (e.g. team collaboration, problem-solving, improvements, communication).
 professional_experience:
   #Write your Jarvis role as a professional experience rather than training.
-  - title: "Data Engineer"
+  - title: "Software Engineer"
     company: "Jarvis"
     duration: "2021-present"
     # The project description must start with an action verb (https://bit.ly/3guO98u)
     description: "Worked in a Software and Data Engineer team that followed the Agile/Scrum model to implement multiple projects
-    in Linux/Bash, Java, Docker and SQL. Conducted daily scrum meetings and bi-weekly sprint meetings with the team
+    in Linux/Bash, Java, Docker, SQL and Hive/Hadoop. Conducted daily scrum meetings and bi-weekly sprint meetings with the team
     to keep on track with everyone's work."
   - title: "Full-stack Web Developer (part-time)"
     company: "ASA Energy Consulting Ltd."

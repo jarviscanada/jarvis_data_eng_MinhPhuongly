@@ -70,9 +70,9 @@
   "professional_experience": [
     {
       "company": "Jarvis",
-      "description": "Worked in a Software and Data Engineer team that followed the Agile/Scrum model to implement multiple projects in Linux/Bash, Java, Docker and SQL. Conducted daily scrum meetings and bi-weekly sprint meetings with the team to keep on track with everyone's work.",
+      "description": "Worked in a Software and Data Engineer team that followed the Agile/Scrum model to implement multiple projects in Linux/Bash, Java, Docker, SQL and Hive/Hadoop. Conducted daily scrum meetings and bi-weekly sprint meetings with the team to keep on track with everyone's work.",
       "duration": "2021-present",
-      "title": "Data Engineer"
+      "title": "Software Engineer"
     },
     {
       "company": "ASA Energy Consulting Ltd.",

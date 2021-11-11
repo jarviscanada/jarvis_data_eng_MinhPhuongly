@@ -35,7 +35,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_MinhPhuong
 
 ## Professional Experiences
 
-**Data Engineer, Jarvis (2021-present)**: Worked in a Software and Data Engineer team that followed the Agile/Scrum model to implement multiple projects in Linux/Bash, Java, Docker and SQL. Conducted daily scrum meetings and bi-weekly sprint meetings with the team to keep on track with everyone's work.
+**Software Engineer, Jarvis (2021-present)**: Worked in a Software and Data Engineer team that followed the Agile/Scrum model to implement multiple projects in Linux/Bash, Java, Docker, SQL and Hive/Hadoop. Conducted daily scrum meetings and bi-weekly sprint meetings with the team to keep on track with everyone's work.
 
 **Full-stack Web Developer (part-time), ASA Energy Consulting Ltd. (2020-present)**: Implemented from scratch a web application using Flask framework for users to generate reports from multiple collected data sources based on user's requirements. The front-end was implemented with the help of HTML5, JavaScript ES6, Bootstrap, Jinja and JQuery. The app used DynamoDB as a database and S3 as a file server. There was a C++ application that was built to collaborate with the web server to perform complicated and heavy calculations for generating reports. The reports were also projected into charts on the web interface using ChartJs. The web app was hosted on EC2 with HTTPS using NginX, WSGI and DNS service.
 
