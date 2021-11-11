@@ -7,9 +7,9 @@ After graduating, I have joined Jarvis and since then, collaborating with team m
 
 **Proficient:** Java, Python, Linux/Bash, RDBMS/SQL, Agile/Scrum, Git/Github
 
-**Competent:** GitFlow, Flask, JavaScript ES6/JQuery, HTML/CSS, DynamoDB/NoSQL
+**Competent:** GitFlow, Flask, JavaScript ES6/JQuery, HTML/CSS, DynamoDB/NoSQL, Zeppelin/Hive/Hadoop, Maven, Junit/Mockito
 
-**Familiar:** AWS, Bootstrap, React.Js, Docker/VMWare, Zeppelin/Hive/Hadoop, Maven, Junit/Mockito, Node.Js, Socket.io, C++
+**Familiar:** AWS, Bootstrap, React.Js, Docker/VMWare, Node.Js, Socket.io, C++
 
 ## Jarvis Projects
 

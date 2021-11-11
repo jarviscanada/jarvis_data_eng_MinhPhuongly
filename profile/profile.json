@@ -87,16 +87,16 @@
       "Flask",
       "JavaScript ES6/JQuery",
       "HTML/CSS",
-      "DynamoDB/NoSQL"
+      "DynamoDB/NoSQL",
+      "Zeppelin/Hive/Hadoop",
+      "Maven",
+      "Junit/Mockito"
     ],
     "familiar": [
       "AWS",
       "Bootstrap",
       "React.Js",
       "Docker/VMWare",
-      "Zeppelin/Hive/Hadoop",
-      "Maven",
-      "Junit/Mockito",
       "Node.Js",
       "Socket.io",
       "C++"
