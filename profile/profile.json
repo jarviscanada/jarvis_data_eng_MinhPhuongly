@@ -49,6 +49,11 @@
       ],
       "git_url": "/core_java",
       "name": "Core Java Apps"
+    },
+    {
+      "description": "The project uses Hadoop ecosystem to perform big data processing in a distributed file system provisioned using Dataproc-GCP (1 Master - 2 Worker Nodes). A public BigQuery table called wdi_2016 was used as the big data. Hive, Zeppelin, HDFS, and YARN were the tools used to answer some business questions. All the solutions were written, executed, and stored in paragraphs of Zeppelin Notebook, which can be later edited and re-used.",
+      "git_url": "/hadoop",
+      "name": "Big Data Processing"
     }
   ],
   "name": "Minh Phuong Ly",
@@ -65,9 +70,9 @@
   "professional_experience": [
     {
       "company": "Jarvis",
-      "description": "Worked in a Software and Data Engineer team that followed the Agile/Scrum model to implement multiple projects in Linux/Bash, Java, Docker and SQL. Conducted daily scrum meetings and bi-weekly sprint meetings with the team to keep on track with everyone's work.",
+      "description": "Worked in a Software and Data Engineer team that followed the Agile/Scrum model to implement multiple projects in Linux/Bash, Java, Docker, SQL and Hive/Hadoop. Conducted daily scrum meetings and bi-weekly sprint meetings with the team to keep on track with everyone's work.",
       "duration": "2021-present",
-      "title": "Data Engineer"
+      "title": "Software Engineer"
     },
     {
       "company": "ASA Energy Consulting Ltd.",
@@ -82,14 +87,16 @@
       "Flask",
       "JavaScript ES6/JQuery",
       "HTML/CSS",
-      "DynamoDB/NoSQL"
+      "DynamoDB/NoSQL",
+      "Zeppelin/Hive/Hadoop",
+      "Maven",
+      "Junit/Mockito"
     ],
     "familiar": [
       "AWS",
       "Bootstrap",
       "React.Js",
       "Docker/VMWare",
-      "Maven",
       "Node.Js",
       "Socket.io",
       "C++"
