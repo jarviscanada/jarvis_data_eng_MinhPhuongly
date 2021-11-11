@@ -94,8 +94,9 @@
       "Bootstrap",
       "React.Js",
       "Docker/VMWare",
-      "Zeppelin/Hive",
+      "Zeppelin/Hive/Hadoop",
       "Maven",
+      "Junit/Mockito",
       "Node.Js",
       "Socket.io",
       "C++"
