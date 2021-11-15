@@ -18,9 +18,9 @@ public class MarketDataDaoTest {
     PoolingHttpClientConnectionManager cm = new PoolingHttpClientConnectionManager();
     cm.setMaxTotal(50);
     cm.setDefaultMaxPerRoute(50);
-    System.out.println(System.getenv("IEX_SECRET"));
+
     MarketDataConfig marketDataConfig = new MarketDataConfig("https://cloud.iexapis.com/v1",
-        "sk_150fccc536d9440fabe74415f0127537");
+        System.getenv("IEX_SECRET"));
     dao = new MarketDataDao(cm,marketDataConfig);
   }
 
