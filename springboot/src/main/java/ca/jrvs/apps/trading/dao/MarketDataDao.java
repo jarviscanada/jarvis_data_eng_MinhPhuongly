@@ -6,12 +6,9 @@ import ca.jrvs.apps.trading.model.domain.IexQuote;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-
 import java.util.List;
 import java.util.Optional;
-
 import org.apache.http.HttpResponse;
-
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.conn.HttpClientConnectionManager;
@@ -26,13 +23,15 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class MarketDataDao implements CrudRepository<IexQuote,String> {
+public class MarketDataDao implements CrudRepository<IexQuote, String> {
+
   private static final String IEX_BATCH_PATH = "/stock/market/batch?symbols=%s&types=quote&token=";
   private final String IEX_BATCH_URL;
   private Logger logger = LoggerFactory.getLogger(MarketDataDao.class);
   private HttpClientConnectionManager httpClientConnectionManager;
 
-  public MarketDataDao(HttpClientConnectionManager httpClientConnectionManager, MarketDataConfig marketDataConfig) {
+  public MarketDataDao(HttpClientConnectionManager httpClientConnectionManager,
+      MarketDataConfig marketDataConfig) {
     this.httpClientConnectionManager = httpClientConnectionManager;
     IEX_BATCH_URL = marketDataConfig.getHost() + IEX_BATCH_PATH + marketDataConfig.getToken();
   }
@@ -47,13 +46,11 @@ public class MarketDataDao implements CrudRepository<IexQuote,String> {
   public Optional<IexQuote> findById(String ticker) {
     Optional<IexQuote> iexQuote;
     List<IexQuote> quotes = findAllById(Collections.singletonList(ticker));
-    if (quotes.size()==0){
+    if (quotes.size() == 0) {
       return Optional.empty();
-    }
-    else if (quotes.size() == 1){
+    } else if (quotes.size() == 1) {
       iexQuote = Optional.of(quotes.get(0));
-    }
-    else{
+    } else {
       throw new DataRetrievalFailureException("Unexpected number of quotes");
     }
     return iexQuote;
@@ -61,56 +58,56 @@ public class MarketDataDao implements CrudRepository<IexQuote,String> {
 
   /**
    * Get quotes from IEX
+   *
    * @param tickers is a list of tickers
    * @return a list of IexQuote objects
    */
   @Override
-  public List<IexQuote> findAllById(Iterable<String> tickers){
+  public List<IexQuote> findAllById(Iterable<String> tickers) {
     List<IexQuote> iexQuotes = new ArrayList<>();
-    String tickersString = String.join(",",tickers);
-    try{
-      final String IEX_FULL_BATCH_URL = String.format(IEX_BATCH_URL,tickersString.toString());
-      String response = executeHttpGet(IEX_FULL_BATCH_URL).orElseThrow(() -> new IllegalArgumentException("No data found, check your tickers"));
+    String tickersString = String.join(",", tickers);
+    try {
+      final String IEX_FULL_BATCH_URL = String.format(IEX_BATCH_URL, tickersString.toString());
+      String response = executeHttpGet(IEX_FULL_BATCH_URL).orElseThrow(
+          () -> new IllegalArgumentException("No data found, check your tickers"));
 
-      JSONObject jsonQuotes= new JSONObject(response);
+      JSONObject jsonQuotes = new JSONObject(response);
 
-      for (String key : tickers){
-        if (jsonQuotes.has(key)){
+      for (String key : tickers) {
+        if (jsonQuotes.has(key)) {
           JSONObject aJsonQuote = jsonQuotes.getJSONObject(key);
-          iexQuotes.add(JsonParser.toObjectFromJson(aJsonQuote.get("quote").toString(),IexQuote.class));
-        }
-        else{
-          throw new IllegalArgumentException("Unknown symbol/ticker: "+key);
+          iexQuotes.add(
+              JsonParser.toObjectFromJson(aJsonQuote.get("quote").toString(), IexQuote.class));
+        } else {
+          throw new IllegalArgumentException("Unknown symbol/ticker: " + key);
         }
       }
       return iexQuotes;
-    }
-    catch(DataRetrievalFailureException e){
+    } catch (DataRetrievalFailureException e) {
       throw new RuntimeException("Failed to find quotes by ID", e);
-    }
-    catch (IOException e){
+    } catch (IOException e) {
       throw new RuntimeException("Failed to find quotes by ID", e);
     }
   }
 
   /**
    * execute httpGet and return the response body as a String
+   *
    * @param url
    * @return http response or Optional.empty() for 404 response
    */
-  private Optional<String> executeHttpGet(String url) throws DataRetrievalFailureException, IOException{
+  private Optional<String> executeHttpGet(String url)
+      throws DataRetrievalFailureException, IOException {
     Optional<String> responseBody;
 
     HttpClient httpClient = getHttpClient();
     HttpGet request = new HttpGet(url);
     HttpResponse response = httpClient.execute(request);
-    if (response.getStatusLine().getStatusCode() == 200){
+    if (response.getStatusLine().getStatusCode() == 200) {
       responseBody = Optional.of(EntityUtils.toString(response.getEntity()));
-    }
-    else if (response.getStatusLine().getStatusCode() == 404){
+    } else if (response.getStatusLine().getStatusCode() == 404) {
       return Optional.empty();
-    }
-    else{
+    } else {
       throw new RuntimeException("Wrong response status code!");
     }
 
@@ -119,9 +116,10 @@ public class MarketDataDao implements CrudRepository<IexQuote,String> {
 
   /**
    * Borrow a HTTP client from httpClientConnectionManager
+   *
    * @return a httpClient
    */
-  private CloseableHttpClient getHttpClient(){
+  private CloseableHttpClient getHttpClient() {
     return HttpClients.custom()
         .setConnectionManager(httpClientConnectionManager)
         //prevent connectionManager shutdown when calling httpClient.close()

@@ -5,8 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
- * IexQuote model coming from: https://iexcloud.io/docs/api/#quote
- * Tool used to create POJO Java model from JSON string: http://www.jsonschema2pojo.org/
+ * IexQuote model coming from: https://iexcloud.io/docs/api/#quote Tool used to create POJO Java
+ * model from JSON string: http://www.jsonschema2pojo.org/
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
