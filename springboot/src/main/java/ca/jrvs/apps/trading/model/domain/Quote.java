@@ -1,8 +1,9 @@
 package ca.jrvs.apps.trading.model.domain;
 
+
 import java.util.Objects;
 
-public class Quote implements Entity<String> {
+public class Quote implements Entity<String>, Comparable<Quote> {
 
   private String ticker;
   private Double lastPrice;
@@ -10,6 +11,18 @@ public class Quote implements Entity<String> {
   private Integer bidSize;
   private Double askPrice;
   private Integer askSize;
+
+  public Quote() {
+  }
+
+  public Quote(Quote quote) {
+    this.ticker = new String(quote.getId());
+    this.lastPrice = new Double(quote.getLastPrice());
+    this.bidPrice = new Double(quote.getBidPrice());
+    this.bidSize = new Integer(quote.getBidSize());
+    this.askPrice = new Double(quote.getAskPrice());
+    this.askSize = new Integer(quote.getAskSize());
+  }
 
   @Override
   public String getId() {
@@ -96,4 +109,10 @@ public class Quote implements Entity<String> {
         && Objects.equals(getAskPrice(), quote.getAskPrice()) && Objects.equals(
         getAskSize(), quote.getAskSize());
   }
+
+  @Override
+  public int compareTo(Quote o) {
+    return this.getId().compareTo(o.getId());
+  }
+
 }

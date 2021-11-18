@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import ca.jrvs.apps.trading.TestConfig;
 import ca.jrvs.apps.trading.model.domain.Quote;
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.After;
 import org.junit.Before;
@@ -25,7 +26,7 @@ public class QuoteDaoIntTest {
   private Quote aQuote;
 
   @Before
-  public void save() {
+  public void setUp() {
 //    quoteDao.deleteAll();
     aQuote = new Quote();
     aQuote.setAskPrice(10d);
@@ -38,8 +39,37 @@ public class QuoteDaoIntTest {
   }
 
   @After
-  public void deleteById() {
+  public void tearDown() {
     quoteDao.deleteById(aQuote.getId());
+  }
+
+  @Test
+  public void save(){
+    aQuote = new Quote();
+    aQuote.setAskPrice(10d);
+    aQuote.setAskSize(10);
+    aQuote.setBidPrice(10.2d);
+    aQuote.setBidSize(10);
+    aQuote.setId("FB");
+    aQuote.setLastPrice(10.1d);
+    quoteDao.save(aQuote);
+    assertEquals(aQuote,quoteDao.findById("FB").get());
+  }
+
+  @Test
+  public void saveAll(){
+    aQuote = new Quote();
+    aQuote.setAskPrice(10d);
+    aQuote.setAskSize(10);
+    aQuote.setBidPrice(10.2d);
+    aQuote.setBidSize(10);
+    aQuote.setId("FB");
+    aQuote.setLastPrice(10.1d);
+
+    List<Quote> quotes = new ArrayList<>();
+    quotes.add(aQuote);
+    quoteDao.saveAll(quotes);
+    assertEquals(2,quoteDao.findAll().size());
   }
 
   @Test
@@ -62,4 +92,11 @@ public class QuoteDaoIntTest {
   public void count() {
     assertEquals(quoteDao.count(), 1);
   }
+
+  @Test
+  public void deleteAll(){
+    quoteDao.deleteAll();
+    assertEquals(0,quoteDao.findAll().size());
+  }
+
 }

@@ -101,7 +101,7 @@ public class QuoteDao implements CrudRepository<Quote, String> {
    * @return
    */
   @Override
-  public <S extends Quote> Iterable<S> saveAll(Iterable<S> iterable) {
+  public <S extends Quote> List<S> saveAll(Iterable<S> iterable) {
     List<S> result = new ArrayList<>();
     for (S quote : iterable) {
       result.add(this.save(quote));
