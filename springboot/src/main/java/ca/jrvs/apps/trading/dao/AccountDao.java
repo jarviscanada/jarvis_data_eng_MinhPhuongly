@@ -2,7 +2,6 @@ package ca.jrvs.apps.trading.dao;
 
 import ca.jrvs.apps.trading.model.domain.Account;
 
-import ca.jrvs.apps.trading.model.domain.Trader;
 import javax.sql.DataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -60,7 +59,7 @@ public class AccountDao extends JdbcCrudDao<Account> {
   }
 
   private Object[] makeUpdateValues(Account account) {
-    return new Object[]{account.getTrader_id(), account.getAmount(), account.getId()};
+    return new Object[]{account.getTraderId(), account.getAmount(), account.getId()};
   }
 
   @Override

@@ -1,6 +1,7 @@
 package ca.jrvs.apps.trading.model.domain;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class Trader implements Entity<Integer>{
   private Integer id;
@@ -70,5 +71,21 @@ public class Trader implements Entity<Integer>{
         ", country='" + country + '\'' +
         ", email='" + email + '\'' +
         '}';
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (!(o instanceof Trader)) {
+      return false;
+    }
+    Trader trader = (Trader) o;
+    return Objects.equals(getId(), trader.getId()) && Objects.equals(
+        getFirstName(), trader.getFirstName()) && Objects.equals(getLastName(),
+        trader.getLastName()) && Objects.equals(getDob(), trader.getDob())
+        && Objects.equals(getCountry(), trader.getCountry()) && Objects.equals(
+        getEmail(), trader.getEmail());
   }
 }

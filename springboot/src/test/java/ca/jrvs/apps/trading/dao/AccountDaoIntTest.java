@@ -41,8 +41,8 @@ public class AccountDaoIntTest {
     //Note: Account table has Trader_id as fk which need to reference to Trader table
     anAccount = new Account();
     anAccount.setId(1); //same with id in Trader table
-    anAccount.setTrader_id(1);
-    anAccount.setAmount(10.5f);
+    anAccount.setTraderId(1);
+    anAccount.setAmount(10.5);
     accountDao.save(anAccount);
   }
 

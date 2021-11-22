@@ -4,11 +4,11 @@ import static org.junit.Assert.*;
 
 import ca.jrvs.apps.trading.TestConfig;
 import ca.jrvs.apps.trading.model.domain.Account;
+import ca.jrvs.apps.trading.model.domain.Position;
 import ca.jrvs.apps.trading.model.domain.Quote;
 import ca.jrvs.apps.trading.model.domain.SecurityOrder;
 import ca.jrvs.apps.trading.model.domain.Trader;
 import java.util.Calendar;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,7 +20,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {TestConfig.class})
 @Sql({"classpath:schema.sql"})
-public class SecurityOrderDaoIntTest {
+public class PositionDaoIntTest {
   @Autowired
   private TraderDao traderDao;
   private Trader aTrader;
@@ -33,9 +33,12 @@ public class SecurityOrderDaoIntTest {
   @Autowired
   private SecurityOrderDao securityOrderDao;
   private SecurityOrder aSecurityOrder;
+  @Autowired
+  private PositionDao positionDao;
+  private Position aPosition;
 
   @Before
-  public void setUp() throws Exception {
+  public void setUp() {
     aTrader = new Trader();
     aTrader.setId(1); //id types serials (auto increase) this line can be opted out
     aTrader.setFirstName("Phuong");
@@ -68,23 +71,29 @@ public class SecurityOrderDaoIntTest {
     aSecurityOrder.setTicker("AAPL");
     aSecurityOrder.setPrice(10.9f);
     aSecurityOrder.setSize(15);
-    aSecurityOrder.setStatus("Closed");
+    //Position View will take records from Security_order table which has status of FILLED
+    aSecurityOrder.setStatus("FILLED");
     aSecurityOrder.setNotes("Bought for fun!");
     securityOrderDao.save(aSecurityOrder);
   }
 
-  @After
-  public void tearDown() throws Exception {
-    securityOrderDao.deleteById(1);
+  @Test
+  public void findById() {
+    assertEquals("AAPL", positionDao.findById(1).get().getTicker());
   }
 
   @Test
-  public void count(){
-    assertEquals(1,securityOrderDao.count());
+  public void findAll() {
+    assertEquals(1, positionDao.findAll().size());
   }
 
   @Test
-  public void findAll(){
-    assertEquals(1,securityOrderDao.findAll().size());
+  public void existsById() {
+    assertTrue(positionDao.existsById(1));
+  }
+
+  @Test
+  public void count() {
+    assertEquals(1,positionDao.count());
   }
 }

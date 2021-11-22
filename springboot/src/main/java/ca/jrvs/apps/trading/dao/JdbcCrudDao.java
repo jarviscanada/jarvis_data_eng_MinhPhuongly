@@ -90,7 +90,7 @@ public abstract class JdbcCrudDao <T extends Entity<Integer>> implements CrudRep
       result = Optional.ofNullable( getJdbcTemplate().queryForObject(sqlQuery,
           BeanPropertyRowMapper.newInstance(getEntityClass()), id));
     } catch (IncorrectResultSizeDataAccessException e) {
-      logger.debug("Can't find trader id:" + id, e);
+      logger.debug("Can't find Entity id:" + id, e);
     }
     return result;
   }

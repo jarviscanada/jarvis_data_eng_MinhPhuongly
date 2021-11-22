@@ -2,6 +2,7 @@ package ca.jrvs.apps.trading.dao;
 
 import ca.jrvs.apps.trading.model.domain.Quote;
 import ca.jrvs.apps.trading.model.domain.Trader;
+import java.util.Arrays;
 import javax.sql.DataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -53,7 +54,7 @@ public class TraderDao extends JdbcCrudDao<Trader>{
 
   @Override
   public int updateOne(Trader trader) {
-    String update_sql = "UPDATE trader SET firstName=?, lastName=?, dob=?, country=?, "
+    String update_sql = "UPDATE trader SET first_name=?, last_name=?, dob=?, country=?, "
         + "email=? WHERE id=?";
     return jdbcTemplate.update(update_sql, makeUpdateValues(trader));
   }

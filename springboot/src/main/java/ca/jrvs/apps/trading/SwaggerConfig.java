@@ -21,6 +21,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * Open http://localhost:8080/swagger-ui.html in web browser for managing/testing this app URIs in
+ * If using Linux execute: sudo netstat -nlp | grep :8080 to find out process using port 8080 and kill it
+ * so that Swagger can run on port 8080
  * Swagger UI.
  */
 @Configuration
