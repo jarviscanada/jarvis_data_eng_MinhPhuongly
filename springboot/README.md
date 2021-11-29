@@ -1,6 +1,6 @@
 Table of contents
 * [Introduction](#Introduction)
-* [Quick Start](#Quick Start)
+* [Quick Start](#Quick)
 * [Implemenation](#Implemenation)
 * [Test](#Test)
 * [Deployment](#Deployment)
