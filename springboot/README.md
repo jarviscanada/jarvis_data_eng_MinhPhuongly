@@ -1,10 +1,10 @@
 Table of contents
 * [Introduction](#Introduction)
-* [Quick Start](##QuickStart)
-* [Implemenation](##Implemenation)
-* [Test](##Test)
-* [Deployment](##Deployment)
-* [Improvements](##Improvements)
+* [Quick Start](#Quick Start)
+* [Implemenation](#Implemenation)
+* [Test](#Test)
+* [Deployment](#Deployment)
+* [Improvements](#Improvements)
 
 # Introduction
 This project is mainly for replacing the legacy system of Jarvis's Trading team, which is hard to scale and manage. 
