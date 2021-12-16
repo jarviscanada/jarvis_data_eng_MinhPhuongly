@@ -3,6 +3,8 @@
 - With the need of processing big data, the team leader decided to use Apache Spark as a solution in clustered environment. Databricks and Zeppelin are the two options that are in consideration. 
 - Technologies applied in the project: Zeppelin, Databricks, Pyspark (Structured APIs, Dataframe), Azure, HDFS, Hive
 
+`Note: this project is partially completed`
+
 ## Databricks and Zeppelin Implementations
 ### Databricks
 - The project used an Online Retail data as a dataset to answer some bussiness questions in a Databricks notebook such as monthly sales, monthly active user, new and existing users, etc.  
