@@ -1,0 +1,10 @@
+secretGenerator:
+- name: psql-pass
+  literals:
+  - password=password
+- name: iex-token
+  literals:
+  - value=asdfwegwere56464wer2123
+resource:
+  - psql-deployment.yaml
+  - trading-deployment.yaml

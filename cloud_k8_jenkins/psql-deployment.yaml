@@ -1,0 +1,69 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: trading-psql
+  labels:
+    app: trading-psql
+spec:
+  ports:
+    - port: 5432
+  selector:
+    app: trading-psql
+    tier: db
+  clusterIP: None
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: psql-pv-claim
+  labels:
+    app: trading-psql
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trading-psql
+  labels:
+    app: trading-psql
+spec:
+  selector:
+    matchLabels:
+      app: trading-psql
+      tier: db
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: trading-psql
+        tier: db
+    spec:
+      containers:
+      - image: phuongly/trading-psl:latest
+        name: trading-psql
+        env:
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: psql-pass
+              key: password
+        - name: POSTGRES_DB
+          value: jrvstrading
+        - name: POSTGRES_USER
+          value: postgres
+        ports:
+        - containerPort: 5432
+          name: trading-psql
+        volumeMounts:
+        - name: psql-persistent-storage
+          mountPath: /var/lib/postgresql/data
+      volumes:
+      - name: psql-persistent-storage
+        persistentVolumeClaim:
+          claimName: psql-pv-claim
