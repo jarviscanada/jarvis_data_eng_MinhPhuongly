@@ -45,7 +45,7 @@ spec:
             secretKeyRef:
               name: psql-pass
               key: password
-         - name: IEX_PUB_TOKEN
+        - name: IEX_PUB_TOKEN
           valueFrom:
             secretKeyRef:
               name: iex-token
