@@ -5,6 +5,6 @@ secretGenerator:
 - name: iex-token
   literals:
   - value=asdfwegwere56464wer2123
-resource:
+resources:
   - psql-deployment.yaml
   - trading-deployment.yaml
