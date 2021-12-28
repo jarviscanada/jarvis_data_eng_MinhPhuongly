@@ -48,7 +48,9 @@ Integration tests were performed using `Junit 4` and `Swagger` was used to have 
   - Obtain your _IEX_PUB_TOKEN_ and start the trading-app docker container
 
         docker run -d -t --name trading-app-dev \
-        -e "PSQL_URL=jdbc:postgresql://trading-psql-dev:5432/jrvstrading" \
+        -e "PSQL_HOST=trading-psql-dev" \
+        -e "PSQL_PORT=5432" \
+        -e "PSQL_DB=jrvstrading" \
         -e "PSQL_USER=postgres" \
         -e "PSQL_PASSWORD=password" \
         -e "IEX_PUB_TOKEN=${IEX_PUB_TOKEN}" \
