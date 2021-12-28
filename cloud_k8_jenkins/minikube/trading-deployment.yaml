@@ -37,7 +37,7 @@ spec:
         name: trading-app
         env:
         - name: PSQL_URL
-          value: jdbc:postgresql://trading-psql-dev:5432/jrvstrading
+          value: jdbc:postgresql://trading-psql:5432/jrvstrading
         - name: PSQL_USER
           value: postgres
         - name: PSQL_PASSWORD
