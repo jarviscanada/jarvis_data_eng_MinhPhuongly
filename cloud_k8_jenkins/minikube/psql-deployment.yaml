@@ -62,7 +62,7 @@ spec:
           name: trading-psql
         volumeMounts:
         - name: psql-persistent-storage
-          mountPath: /var/lib/postgresql/data
+          mountPath: /var/lib/psql
       volumes:
       - name: psql-persistent-storage
         persistentVolumeClaim:
