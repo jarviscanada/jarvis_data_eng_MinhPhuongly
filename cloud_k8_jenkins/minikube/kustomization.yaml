@@ -4,7 +4,7 @@ secretGenerator:
   - password=password
 - name: iex-token
   literals:
-  - value=asdfwegwere56464wer2123
+  - value=pk_ca68b91b1aec410f8402d4791fbe0e2e
 resources:
   - psql-deployment.yaml
   - trading-deployment.yaml

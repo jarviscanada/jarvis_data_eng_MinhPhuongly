@@ -36,8 +36,12 @@ spec:
       - image: phuongly/trading-app:latest
         name: trading-app
         env:
-        - name: PSQL_URL
-          value: "jdbc:postgresql://trading-psql:5432/jrvstrading"
+        - name: PSQL_HOST
+          value: trading-psql
+        - name: PSQL_PORT
+          value: "5432"
+        - name: PSQL_DB
+          value: jrvstrading
         - name: PSQL_USER
           value: postgres
         - name: PSQL_PASSWORD
