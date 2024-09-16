@@ -1,0 +1,52 @@
+pipeline {
+    //Usage: this file should be placed into Springboot project (same level with Dockerfile) on Develop branch to be able to run
+    //Description: this file is used to construct pipeline for CI/CD of the develop branch of Springboot project using Jenkins 
+    agent any
+
+    environment {
+        //Credentials can be defined within Jenkins Master UI (Manage Jenkins > Manage Credentials)
+        AZ_USER = credentials("AZ_USER_DEV")
+        AZ_PWD = credentials("AZ_PWD_DEV")
+        AZ_TENANT = credentials("AZ_TENANT_DEV")
+
+        app_name = 'trading-app'
+        ACR_NAME = 'acrJarvisPhuong'
+        //BUILD_NUMBER is a build-in env in Jenkins
+        IMAGE_NAME = "trading-app:${BUILD_NUMBER}"
+
+        RESOURCE_GROUP = "rg-trading-app-aks"
+        CLUSTER_NAME = "aks-trading-app"
+        DOCKER_REPO = "arcjarvisPhuong.azurerc.io"
+        DEPLOYMENT_NAME = "deployment/trading-app"
+    }
+
+    stages {
+        stage('Init') {
+            steps {
+                sh 'ls'
+                sh 'az version'
+                sh "az login --service-principal --username ${AZ_USER} --password ${AZ_PWD} --tenant ${AZ_TENANT}"
+            }
+        }
+        stage('Build') {
+            steps {
+                echo "building"
+                sh "az acr build --image ${IMAGE_NAME} --registry ${ACR_NAME} --file Dockerfile ."
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploy to dev'
+                //list all image from the ACR for debugging 
+                sh "az acr repository list --name ${ACR_NAME} --output table"
+                //Connect the jenkin agent to AKS cluster to be able to use kubectl cmd
+                sh "az aks get-credentials --name ${CLUSTER_NAME} --resource-group ${RESOURCE_GROUP}"
+                //Show some info for debugging
+                sh "kubectl cluster-info"
+                sh "kubectl version --short"         
+                //Change the image of deployment.apps/springboot-demo-app-dev to the new image
+                sh "kubectl set image ${DEPLOYMENT_NAME} trading-app=${DOCKER_REPO}/${IMAGE_NAME}"
+            }
+        }
+    }
+}
